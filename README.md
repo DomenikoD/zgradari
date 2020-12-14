@@ -41,8 +41,7 @@ Vođenje dokumentacije i BIM-a zgrade
 Vođenje i upravljanje pričuvom
 
 ### DONE
-TRENUTNO STANJE NA
-[TRENUTNO STANJE NA](https://dev.d3hycocxzbzsx2.amplifyapp.com/)
+TRENUTNO STANJE APLIKACIJE DOSTUPNO [OVDJE](https://dev.d3hycocxzbzsx2.amplifyapp.com/)
 
 Postavljen amplify stack
 Definirana pocetna baza na graphgl-u
