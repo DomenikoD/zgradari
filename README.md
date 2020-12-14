@@ -22,7 +22,6 @@ Komentar se dodijeljuje upravitelju i projektima.
 # Web aplikacija - ZGRADARI
 ## Stack
 Izgrađena je na react js, graphql, aws amplify stack-u.
-Za daljni razvoj javite se na domeniko.divjak@gmail.com
 
 ## Daljni razvoj
 Za daljni razvoj javite se na domeniko.divjak@gmail.com
