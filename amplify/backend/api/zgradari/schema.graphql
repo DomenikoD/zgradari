@@ -1,0 +1,62 @@
+interface Person {
+  id: ID!
+  name: String!
+  email: String!
+  phoneNumber: String!
+}
+
+type Building @model 
+@key(name:"byManager", fields:["managerID", "address"], queryField:"managerByBuilding")
+{
+  id: ID!
+  name: String!
+  address: String!
+  managerID: ID!
+  manager:Manager!
+  tenants: [Tenant] @connection(keyName: "byBuilding", fields: ["id"])
+}
+
+type Manager implements Person @model
+ {
+  id: ID!
+  name: String!
+  email: String!
+  phoneNumber: String!
+  buildings: [Building] @connection(keyName: "byManager", fields: ["id"])
+}
+
+type Tenant implements Person 
+  @model 
+  @key(name: "byBuilding", fields: ["buildingID"]) 
+  {
+    id: ID!
+    buildingID: ID!
+    name: String!
+    email: String!
+    phoneNumber: String!
+    aboutMe:String
+    comments:[Comment] @connection(keyName:"byTenant", fields:["id"])
+  }
+
+
+type Project  @model
+  @key(name:"byBuilding", fields:["buildingID", "cost"], queryField:"projectsByBuilding")
+ {
+  id: ID!
+  buildingID: ID!
+  name: String!
+  cost: Float!
+  rating: Int!
+  comments:[Comment] @connection(keyName:"byProject", fields:["id"])
+}
+type Comment @model
+  @key(name: "byTenant", fields: ["tenantID"], queryField:"commentsByTenant") 
+  @key(name: "byBuilding", fields: ["buildingID"], queryField:"commentsByBuilding") 
+  @key(name: "byProject", fields: ["projectID"], queryField:"commentsByProject") 
+ {
+  id: ID!
+  tenantID: ID!
+  buildingID: ID!
+  projectID: ID!
+  content: String!
+}
