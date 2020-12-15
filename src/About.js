@@ -1,15 +1,17 @@
 import React from 'react'
 import { Button, Jumbotron } from 'react-bootstrap';
+import Header from './Header'
+import Footer from './Footer'
 
-
-const Landing = () => {
+const About = () => {
   
 
   return(
     <div >
+    <Header />
 
 <Jumbotron>
-  <h1>Dobro došli na Zgradare!</h1>
+  <h1>O nama!</h1>
   <p>
   Ovom web-aplikacijom povećava se interakcija svih suvlasnika zgrade, te na taj način osvještava briga za zajedničko vlasništvo, na način da se ono obnavlja, uređuje, predlažu ideje i vode glasovanja.
 Korisnici aplikacije su predstavnik stanara i stanari vlasnici. U daljnjem razvoju i ostali dionici provedenih i izglasanih projekta.
@@ -19,11 +21,14 @@ Korisnici aplikacije su predstavnik stanara i stanari vlasnici. U daljnjem razvo
   <Button href='https://github.com/DomenikoD/zgradari' variant="link">Izvorni kod</Button>
   </p>
 </Jumbotron>
+<Footer />
+
     </div>
+    
   )
 
 }
 
 
 
-export default Landing
+export default About
