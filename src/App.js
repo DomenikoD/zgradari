@@ -7,7 +7,7 @@ import { listManagers } from './graphql/queries'
 import awsExports from "./aws-exports";
 Amplify.configure(awsExports);
 
-const initialManagerState = {name:'', email:'', phoneNumber:'', buildings:[] }
+const initialManagerState = {name:'', email:'', phoneNumber:''}
 
 const App = () => {
   const [formState, setFormState] = useState(initialManagerState)
@@ -32,7 +32,7 @@ const App = () => {
 
   async function addManager(){
     try{
-      if(!formState.name || !formState.email || !formState.phoneNumber || !formState.buildings) return
+      if(!formState.name || !formState.email || !formState.phoneNumber ) return
       const manager = {...formState}
       setManagers([...managers, manager])
       setFormState(initialManagerState)

@@ -1,15 +1,15 @@
 # Aplikacija za vođenje zgrade
 
 Ovom web-aplikacijom povećava se interakcija svih suvlasnika zgrade, te na taj način osvještava briga za zajedničko vlasništvo, na način da se ono obnavlja, uređuje, predlažu ideje i vode glasovanja.
-Korisnici aplikacije su upravitelj zgrade i stanari vlasnici.
+Korisnici aplikacije su predstavnik stanara i stanari vlasnici. U daljnjem razvoju i ostali dionici provedenih i izglasanih projekta.
 
-## Upravitelj zgrade
+## Predstavnik stanara
 
-Definira zgradu, upravlja bazom stanara, projekata i imovinom.
+Definira zgradu, upravlja bazom stanara (poziva, dodaje i briše stanare), bazom projekata i imovinom.
 
 ## Stanari - vlasnici
 
-Pozvani su od upravitelja zgrade, te vrše registraciju. Sudjeluju u glasanju za projekte, komentiraju projekte, ocijnjuju ih, komentiraju upravitelja i svo zajedničko vlasništvo.
+Pozvani su od predstanika stanara, te vrše svoju registraciju. Sudjeluju u glasanju za projekte, komentiraju projekte, ocijnjuju ih, komentiraju vodstvo zgrade i cijelo svoje i zajedničko vlasništvo.
 
 ## Projekt
 
@@ -17,7 +17,7 @@ Projekte predlažu i glasaju za njih stanari vlasnici, te komentiraju iste.
 
 ## Komentar
 
-Komentar se dodijeljuje upravitelju i projektima.
+Komentar se dodijeljuje predstavniku stanara i projektima.
 
 # Web aplikacija - ZGRADARI
 ## Stack
@@ -45,4 +45,4 @@ TRENUTNO STANJE APLIKACIJE DOSTUPNO [OVDJE](https://dev.d3hycocxzbzsx2.amplifyap
 
 Postavljen amplify stack
 Definirana pocetna baza na graphgl-u
-Početna stranica za dodavanje Upravitelja (s greškom:) )
+Početna stranica za dodavanje Predstavnika stanara
