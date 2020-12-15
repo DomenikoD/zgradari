@@ -3,6 +3,9 @@ import React, { useEffect, useState } from 'react'
 import Amplify, { API, graphqlOperation } from 'aws-amplify'
 import { createManager } from './graphql/mutations'
 import { listManagers } from './graphql/queries'
+import Header from './Header'
+import Footer from './Footer'
+import Landing from './Landing'
 
 import awsExports from "./aws-exports";
 Amplify.configure(awsExports);
@@ -44,36 +47,43 @@ const App = () => {
   }
 
   return(
-    <div style={styles.container}>
-      <h2>Building Managers</h2>
-      <input
-        onChange={event => setInput('name', event.target.value)}
-        style={styles.input}
-        value={formState.name}
-        placeholder="Name"
-      />
-      <input
-        onChange={event => setInput('email', event.target.value)}
-        style={styles.input}
-        value={formState.email}
-        placeholder="Email"
-      />
-      <input
-        onChange={event => setInput('phoneNumber', event.target.value)}
-        style={styles.input}
-        value={formState.phoneNumber}
-        placeholder="Phone Number"
-      />
-      <button style={styles.button} onClick={addManager}>Create Manager</button>
-      {
-        managers.map((manager, index) => (
-          <div key={manager.id ? manager.id : index} style={styles.manager}>
-            <p style={styles.managerName}>{manager.name}</p>
-            <p style={styles.managerInfo}>{manager.email}</p>
-            <p style={styles.managerInfo}>{manager.phoneNumber}</p>
-          </div>
-        ))
-      }
+    <div>
+      <Header />
+      <Landing />
+      <div style={styles.container}>
+        <h2>Predstavnik stanara</h2>
+        <input
+          onChange={event => setInput('name', event.target.value)}
+          style={styles.input}
+          value={formState.name}
+          placeholder="Ime i Prezime"
+        />
+        <input
+          onChange={event => setInput('email', event.target.value)}
+          style={styles.input}
+          value={formState.email}
+          placeholder="Email"
+        />
+        <input
+          onChange={event => setInput('phoneNumber', event.target.value)}
+          style={styles.input}
+          value={formState.phoneNumber}
+          placeholder="Broj mob/tel"
+        />
+        <button style={styles.button} onClick={addManager}>Dodaj predstavnika</button>
+        <h5>Predstavnici</h5>
+        {
+          managers.map((manager, index) => (
+            <div key={manager.id ? manager.id : index} style={styles.manager}>
+              <p style={styles.managerName}>{manager.name}</p>
+              <p style={styles.managerInfo}>{manager.email}</p>
+              <p style={styles.managerInfo}>{manager.phoneNumber}</p>
+            </div>
+          ))
+        }
+      </div>
+      <Footer />
+
     </div>
   )
 

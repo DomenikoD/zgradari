@@ -21,7 +21,7 @@ Komentar se dodijeljuje predstavniku stanara i projektima.
 
 # Web aplikacija - ZGRADARI
 ## Stack
-Izgrađena je na react js, graphql, aws amplify stack-u.
+Izgrađena je na forntendu react js i bootstrap, te backend graphql, aws amplify stack-u.
 
 ## Daljni razvoj
 Za daljni razvoj javite se na domeniko.divjak@gmail.com
