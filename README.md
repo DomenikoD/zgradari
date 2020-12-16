@@ -46,3 +46,15 @@ TRENUTNO STANJE APLIKACIJE DOSTUPNO [OVDJE](https://dev.d3hycocxzbzsx2.amplifyap
 Postavljen amplify stack
 Definirana pocetna baza na graphgl-u
 Početna stranica za dodavanje Predstavnika stanara
+
+
+### Bilješke
+Dodati u AWS Amplify u App settings Rewrites and redirects - kako bi proradio react-router-dom 
+[
+    {
+        "source": "</^[^.]+$|\\.(?!(css|gif|ico|jpg|js|png|txt|svg|woff|ttf|map|json)$)([^.]+$)/>",
+        "target": "/index.html",
+        "status": "200",
+        "condition": null
+    }
+]

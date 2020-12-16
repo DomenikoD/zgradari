@@ -1,40 +1,48 @@
-import React from 'react'
-import { Button, Navbar, Nav, NavDropdown, Form,FormControl } from 'react-bootstrap';
-import {Link} from 'react-router-dom'
-
+import React from "react";
+import {
+  Button,
+  Navbar,
+  Nav,
+  NavDropdown,
+  Form,
+  FormControl,
+} from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Header = () => {
-  
-  return(
-    <div >
-
-        <Navbar bg="light" expand="lg">
-            <Link to="/">
-              <Navbar.Brand >ZGRADARI</Navbar.Brand>
-            </Link>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-auto">
-                <Nav.Link href="/onama">O nama</Nav.Link>
-                <Nav.Link href="/prijava">Prijava</Nav.Link>
-                <Nav.Link href="/registracija">Registracija</Nav.Link>
+  return (
+    <div>
+      <Navbar bg="light" expand="lg">
+        <Link to="/">
+          <Navbar.Brand>ZGRADARI</Navbar.Brand>
+        </Link>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="mr-auto">
+            <Nav.Link href="/onama">O nama</Nav.Link>
+            <Nav.Link href="/prijava">Prijava</Nav.Link>
+            <Nav.Link href="/registracija">Registracija</Nav.Link>
             <NavDropdown title="Kako krenuti" id="basic-nav-dropdown">
-                <NavDropdown.Item  href="/pozovipredstavnika">Pozovi predstavnika zgrade</NavDropdown.Item>
-                  <NavDropdown.Item href="/onama">O nama</NavDropdown.Item>
-                <NavDropdown.Item >Something</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item>Separated link</NavDropdown.Item>
+              <NavDropdown.Item href="/pozovipredstavnika">
+                Pozovi predstavnika zgrade
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/onama">O nama</NavDropdown.Item>
+              <NavDropdown.Item>Something</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item>Separated link</NavDropdown.Item>
             </NavDropdown>
-            </Nav>
-            <Form inline>
-                <FormControl type="text" placeholder="Adresa" className="mr-sm-2" />
-                <Button variant="outline-success">Pronađi svoju zgradu</Button>
-            </Form>
-            </Navbar.Collapse>
-        </Navbar>
+            <Nav.Link href="/upravitelj">Upravitelj UI</Nav.Link>
+            <Nav.Link href="/vlasnik">Vlasnik UI</Nav.Link>
+
+          </Nav>
+          <Form inline>
+            <FormControl type="text" placeholder="Adresa" className="mr-sm-2" />
+            <Button variant="outline-success">Pronađi svoju zgradu</Button>
+          </Form>
+        </Navbar.Collapse>
+      </Navbar>
     </div>
-  )
+  );
+};
 
-}
-
-export default Header
+export default Header;

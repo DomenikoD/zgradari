@@ -3,20 +3,18 @@ import Amplify from "aws-amplify";
 import Header from "./Header";
 import Footer from "./Footer";
 import Landing from "./Landing";
-import LandingCarousel from "./LandingCarousel";
 
 import awsExports from "./aws-exports";
 Amplify.configure(awsExports);
 
-const Home = () => {
+const ManagerMain = () => {
   return (
     <div>
       <Header />
       <Landing />
-      <LandingCarousel />
       <Footer />
     </div>
   );
 };
 
-export default Home;
+export default ManagerMain;
