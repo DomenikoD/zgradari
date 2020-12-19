@@ -1,7 +1,10 @@
 import React from "react";
 import { Row, Nav, Col, Tab } from "react-bootstrap";
-import BuildingOverview from "./BuildingOverview";
-import ProjectOverview from "./ProjectOverview";
+import BuildingOverview from "../building/BuildingOverview";
+import ProjectOverview from "../project/ProjectOverview";
+import PollOverview from "../poll/PollOverview";
+import FinanceOverview from "../finance/FinanceOverview";
+import PaymentsOverview from "../payments/PaymentsOverview";
 
 const ConsoleSideBar = () => {
   const buidling = {
@@ -57,13 +60,13 @@ const ConsoleSideBar = () => {
                   <ProjectOverview building={buidling} />
                 </Tab.Pane>
                 <Tab.Pane eventKey="queries">
-                  <p>asdf</p>
+                <PollOverview building={buidling} />
                 </Tab.Pane>
                 <Tab.Pane eventKey="building money">
-                  <p>asdf</p>
+                <FinanceOverview building={buidling} />
                 </Tab.Pane>
                 <Tab.Pane eventKey="payments">
-                  <p>asdf</p>
+                <PaymentsOverview building={buidling} />
                 </Tab.Pane>
                 <Tab.Pane eventKey="tenants">
                   <p>asdf</p>

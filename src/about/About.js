@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Jumbotron } from "react-bootstrap";
-import Header from "./Header";
-import Footer from "./Footer";
+import Header from "../home/Header";
+import Footer from "../home/Footer";
 
 const About = () => {
   return (

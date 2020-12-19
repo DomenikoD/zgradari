@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "react-bootstrap";
-import awsbilling from "./awsbilling.PNG";
+import awsbilling from "../billing/awsbilling.PNG";
 
 const AdminOverview = () => {
   return (
@@ -12,7 +12,7 @@ const AdminOverview = () => {
       <h5>Poruke za support</h5>
       <h5>Administriranje baze predstavnika i zgrada</h5>
       <h5>Generiranje reporta prema CTO</h5>
-      <h5>Specijalne funkcije apikacije</h5>
+      <h5>Specijalne funkcije aplikacije</h5>
       <img className="d-block w-20" src={awsbilling}/>
 
     </div>

@@ -7,7 +7,6 @@ const BuildingOverview = (props) => {
       <p>Adresa: {props.building.buildingAddress}</p>
       <p>Predstavnik: {props.building.manager.name}</p>
       <p>Kontakt: {props.building.manager.phone}</p>
-      <h5>parametrizirati komponenteeee</h5>
       <div className="status tablica">
         <h5>Status</h5>
         <Table striped bordered hover>

@@ -1,9 +1,9 @@
 /* src/App.js */
 import React from "react";
-import Header from "./Header";
-import Footer from "./Footer";
-import Landing from "./Landing";
-import LandingCarousel from "./LandingCarousel";
+import Header from "../home/Header";
+import Footer from "../home/Footer";
+import Landing from "../home/Landing";
+import LandingCarousel from "../home/LandingCarousel";
 
 const TODO = () => {
   return (

@@ -2,13 +2,13 @@
 import React from "react";
 import Amplify from "aws-amplify";
 
-import Home from "./Home";
-import TODO from "./TODO";
-import About from "./About";
-import ManagerAdd from "./ManagerAdd";
-import TenantMain from "./TenantMain";
-import ConsoleMain from "./ConsoleMain";
-import AdminOverview from "./AdminOverview";
+import Home from "./home/Home";
+import TODO from "./temp/TODO";
+import About from "./about/About";
+import ManagerAdd from "./manager/ManagerAdd";
+import TenantMain from "./tenant/TenantMain";
+import ConsoleMain from "./console/ConsoleMain";
+import AdminOverview from './admin/AdminOverview';
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 
 import awsExports from "./aws-exports";

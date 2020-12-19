@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button, ListGroup } from 'react-bootstrap';
-import CommentsList from './CommentsList'
+import CommentsList from '../comment/CommentsList'
 
 
 const ProjectOverview = (props) => {
