@@ -39,12 +39,7 @@ const LandingCarousel = () => {
               najoptimalnijeg.
             </p>
           </Carousel.Caption>
-          <Carousel.Caption>
-            <h3 style={styles.text}>Vaša zgrada će vrijediti više</h3>
-            <p style={styles.text}>
-              Ako je pričuva pod kontrolom. Ako su jasni troškovi.
-            </p>
-          </Carousel.Caption>
+
         </Carousel.Item>
       </Carousel>
     </div>

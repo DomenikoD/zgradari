@@ -6,8 +6,8 @@ import Home from "./Home";
 import TODO from "./TODO";
 import About from "./About";
 import ManagerAdd from "./ManagerAdd";
-import ManagerMain from "./ManagerMain";
 import TenantMain from "./TenantMain";
+import ConsoleMain from "./ConsoleMain";
 
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 
@@ -24,7 +24,7 @@ const App = () => {
         <Route path="/registracija" component={TODO} />
         <Route path="/onama" component={About} />
         <Route path="/pozovipredstavnika" component={ManagerAdd} />
-        <Route path="/upravitelj" component={ManagerMain} />
+        <Route path="/upravitelj" component={ConsoleMain} />
         <Route path="/vlasnik" component={TenantMain} />
       </Switch>
     </Router>
