@@ -25,11 +25,9 @@ const Header = () => {
             <NavDropdown title="Kako krenuti" id="basic-nav-dropdown">
               <NavDropdown.Item href="/pozovipredstavnika">
                 Pozovi predstavnika zgrade
-              </NavDropdown.Item>
-              <NavDropdown.Item href="/onama">O nama</NavDropdown.Item>
-              <NavDropdown.Item>Something</NavDropdown.Item>
+              </NavDropdown.Item>              
               <NavDropdown.Divider />
-              <NavDropdown.Item>Separated link</NavDropdown.Item>
+              <NavDropdown.Item href="/prijava">Javi se nama</NavDropdown.Item>
             </NavDropdown>
             <Nav.Link href="/upravitelj">Upravitelj UI</Nav.Link>
             <Nav.Link href="/vlasnik">Vlasnik UI</Nav.Link>

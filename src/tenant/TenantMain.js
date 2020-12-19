@@ -1,11 +1,17 @@
 import React from "react";
-import Amplify from "aws-amplify";
-
+import Header from "../home/Header";
+import ConsoleSideBar from "../console/ConsoleSideBar";
 
 const TenantMain = () => {
+  const userInfo ={
+    name: "Ivo Ivić",
+    isAdmin: false
+  }
   return (
     <div>
-      <h1>TODO isto ko manager (manje opcija)</h1>
+      <Header />
+      <ConsoleSideBar userInfo={userInfo} />
+      
     </div>
   );
 };

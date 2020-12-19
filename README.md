@@ -46,6 +46,7 @@ TRENUTNO STANJE APLIKACIJE DOSTUPNO [OVDJE](https://dev.d3hycocxzbzsx2.amplifyap
 Postavljen amplify stack  
 Definirana pocetna baza na graphgl-u  
 Početna stranica za dodavanje Predstavnika stanara  
+Stranica administracije za Predstavnika stanara
 
 
 ### Bilješke

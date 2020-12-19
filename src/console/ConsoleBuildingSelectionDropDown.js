@@ -61,8 +61,11 @@ const ConsoleBuildingSelectionDropDown = () => {
           <Dropdown.Item eventKey="2" active>
             Vatroslava Jagića
           </Dropdown.Item>
-          <Dropdown.Item eventKey="3">Orange</Dropdown.Item>
-          <Dropdown.Item eventKey="1">Red-Orange</Dropdown.Item>
+          <Dropdown.Item eventKey="3">Moja zgrada 1</Dropdown.Item>
+          <Dropdown.Item eventKey="4">Moja zgrada 2</Dropdown.Item>
+          <Dropdown.Item eventKey="5">Moja zgrada 3</Dropdown.Item>
+          <Dropdown.Item eventKey="6">Moja zgrada 4</Dropdown.Item>
+          <Dropdown.Item eventKey="7">Moja zgrada 5</Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
     </div>

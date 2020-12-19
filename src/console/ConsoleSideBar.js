@@ -5,18 +5,25 @@ import ProjectOverview from "../project/ProjectOverview";
 import PollOverview from "../poll/PollOverview";
 import FinanceOverview from "../finance/FinanceOverview";
 import PaymentsOverview from "../payments/PaymentsOverview";
+import TenantOverview from "../tenant/TenantOverview";
+import InfosOverview from "../communication/InfosOverview";
+import SettingsOverview from "../settings/SettingsOverview";
+import BillingOverview from "../billing/BillingOverview";
 
-const ConsoleSideBar = () => {
+const ConsoleSideBar = (props) => {
   const buidling = {
     buildingName: "Vatroslava Jagića",
     buildingAddress: "Vatroslava Jagića 25-31",
-    manager: { name: "Domeniko", phone:"1234" }
+    manager: { name: "Domeniko", phone: "1234" },
   };
 
   return (
     <div>
       <div className="izborbnik bocni">
-        <Tab.Container id="left-tabs-example" defaultActiveKey="building overview">
+        <Tab.Container
+          id="left-tabs-example"
+          defaultActiveKey="building overview"
+        >
           <Row>
             <Col sm={3}>
               <Nav variant="pills" className="flex-column">
@@ -31,22 +38,22 @@ const ConsoleSideBar = () => {
                 <Nav.Item>
                   <Nav.Link eventKey="queries">Ankete</Nav.Link>
                 </Nav.Item>
-                <Nav.Item>
+                <Nav.Item >
                   <Nav.Link eventKey="building money">Pričuva</Nav.Link>
                 </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey="payments">Plačanja</Nav.Link>
+                <Nav.Item hidden={!props.userInfo.isAdmin}>
+                  <Nav.Link eventKey="payments">Plaćanja</Nav.Link>
                 </Nav.Item>
-                <Nav.Item>
+                <Nav.Item hidden={!props.userInfo.isAdmin}>
                   <Nav.Link eventKey="tenants">Stanari</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
                   <Nav.Link eventKey="infos">Obavijesti</Nav.Link>
                 </Nav.Item>
-                <Nav.Item>
+                <Nav.Item hidden={!props.userInfo.isAdmin}>
                   <Nav.Link eventKey="settings">Postavke</Nav.Link>
                 </Nav.Item>
-                <Nav.Item>
+                <Nav.Item hidden={!props.userInfo.isAdmin}>
                   <Nav.Link eventKey="billing">Naplata</Nav.Link>
                 </Nav.Item>
               </Nav>
@@ -60,25 +67,25 @@ const ConsoleSideBar = () => {
                   <ProjectOverview building={buidling} />
                 </Tab.Pane>
                 <Tab.Pane eventKey="queries">
-                <PollOverview building={buidling} />
+                  <PollOverview building={buidling} />
                 </Tab.Pane>
                 <Tab.Pane eventKey="building money">
-                <FinanceOverview building={buidling} />
+                  <FinanceOverview building={buidling} />
                 </Tab.Pane>
                 <Tab.Pane eventKey="payments">
-                <PaymentsOverview building={buidling} />
+                  <PaymentsOverview building={buidling} />
                 </Tab.Pane>
                 <Tab.Pane eventKey="tenants">
-                  <p>asdf</p>
+                  <TenantOverview building={buidling} />
                 </Tab.Pane>
                 <Tab.Pane eventKey="infos">
-                  <p>asdf</p>
+                  <InfosOverview building={buidling} userInfo={props.userInfo} />
                 </Tab.Pane>
                 <Tab.Pane eventKey="settings">
-                  <p>asdf</p>
+                <SettingsOverview building={buidling} />
                 </Tab.Pane>
                 <Tab.Pane eventKey="billing">
-                  <p>asdf</p>
+                <BillingOverview building={buidling} />
                 </Tab.Pane>
               </Tab.Content>
             </Col>

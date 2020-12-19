@@ -61,7 +61,7 @@ const PaymentsOverview = (props) => {
         </Table>
       </div>
       <div className="news tablica">
-        <h5>Ukupno plačanje</h5>
+        <h5>Ukupno plaćanje</h5>
         <p>99.110kn </p>
       </div>
     </div>

@@ -6,16 +6,21 @@ const Footer = () => {
 <div class="container">
 
   <div class="row align-items-center">
+  <p></p>
+  <p></p>    <p></p>
+
     <div class="col">
-      Želje i ideje na: domeniko.divjak@gmail.com
+      Želje, ideje i prijave na: domeniko.divjak@gmail.com
     </div>
     <div class="col">
       Izrada u tijeku
     </div>
     <div class="col">
-      Prvih 100 - zauvijek besplatno! Otvorene prijave.
+      Prvih 50 ZGRADA - zauvijek besplatno! Otvorene prijave.
     </div>
   </div>
+  <p></p>
+  <p></p>
 
 </div>
   )

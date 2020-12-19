@@ -7,7 +7,7 @@ import TODO from "./temp/TODO";
 import About from "./about/About";
 import ManagerAdd from "./manager/ManagerAdd";
 import TenantMain from "./tenant/TenantMain";
-import ConsoleMain from "./console/ConsoleMain";
+import ManagerMain from "./manager/ManagerMain";
 import AdminOverview from './admin/AdminOverview';
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 
@@ -24,7 +24,7 @@ const App = () => {
         <Route path="/registracija" component={TODO} />
         <Route path="/onama" component={About} />
         <Route path="/pozovipredstavnika" component={ManagerAdd} />
-        <Route path="/upravitelj" component={ConsoleMain} />
+        <Route path="/upravitelj" component={ManagerMain} />
         <Route path="/vlasnik" component={TenantMain} />
         <Route path="/admin" component={AdminOverview} />
       </Switch>
