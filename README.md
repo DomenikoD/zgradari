@@ -27,25 +27,25 @@ Izgrađena je na forntendu react js i bootstrap, te backend graphql, aws amplify
 Za daljni razvoj javite se na domeniko.divjak@gmail.com
 
 ### TODOs 
-Učenje i dobra zabava.
-Marketing web-aplikacije
-Proširenje funkcionalnosti baze
-Razvoj na nativnim mobilnim platformama
-Razvoj vođenja radova
-Evaluiranje ponuda radova
-Reklame za ponude radova
-Izrade ponuda izvođača
-Prihvaćanje i izvršavanje ponuda
-Naplačivanje posredničke provizije
-Vođenje dokumentacije i BIM-a zgrade
-Vođenje i upravljanje pričuvom
+Učenje i dobra zabava.  
+Marketing web-aplikacije  
+Proširenje funkcionalnosti baze  
+Razvoj na nativnim mobilnim platformama  
+Razvoj vođenja radova  
+Evaluiranje ponuda radova  
+Reklame za ponude radova  
+Izrade ponuda izvođača  
+Prihvaćanje i izvršavanje ponuda  
+Naplačivanje posredničke provizije  
+Vođenje dokumentacije i BIM-a zgrade  
+Vođenje i upravljanje pričuvom  
 
 ### DONE
-TRENUTNO STANJE APLIKACIJE DOSTUPNO [OVDJE](https://dev.d3hycocxzbzsx2.amplifyapp.com/)
+TRENUTNO STANJE APLIKACIJE DOSTUPNO [OVDJE](https://dev.d3hycocxzbzsx2.amplifyapp.com/)  
 
-Postavljen amplify stack
-Definirana pocetna baza na graphgl-u
-Početna stranica za dodavanje Predstavnika stanara
+Postavljen amplify stack  
+Definirana pocetna baza na graphgl-u  
+Početna stranica za dodavanje Predstavnika stanara  
 
 
 ### Bilješke
