@@ -4,10 +4,16 @@ import BuildingOverview from "./BuildingOverview";
 import ProjectOverview from "./ProjectOverview";
 
 const ConsoleSideBar = () => {
+  const buidling = {
+    buildingName: "Vatroslava Jagića",
+    buildingAddress: "Vatroslava Jagića 25-31",
+    manager: { name: "Domeniko", phone:"1234" }
+  };
+
   return (
     <div>
       <div className="izborbnik bocni">
-        <Tab.Container id="left-tabs-example" defaultActiveKey="first">
+        <Tab.Container id="left-tabs-example" defaultActiveKey="building overview">
           <Row>
             <Col sm={3}>
               <Nav variant="pills" className="flex-column">
@@ -45,10 +51,10 @@ const ConsoleSideBar = () => {
             <Col sm={9}>
               <Tab.Content>
                 <Tab.Pane eventKey="building overview">
-                  <BuildingOverview />
+                  <BuildingOverview building={buidling} />
                 </Tab.Pane>
                 <Tab.Pane eventKey="projects">
-                <ProjectOverview />
+                  <ProjectOverview building={buidling} />
                 </Tab.Pane>
                 <Tab.Pane eventKey="queries">
                   <p>asdf</p>
