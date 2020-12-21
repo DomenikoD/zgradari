@@ -1,13 +1,10 @@
 /* src/App.js */
 import React, { useEffect, useState } from 'react'
-import Amplify, { API, graphqlOperation } from 'aws-amplify'
+import { API, graphqlOperation } from 'aws-amplify'
 import { createManager } from '../graphql/mutations'
 import { listManagers } from '../graphql/queries'
 import Header from '../home/Header'
 import Footer from '../home/Footer'
-
-import awsExports from "../aws-exports";
-Amplify.configure(awsExports);
 
 const initialManagerState = {name:'', email:'', phoneNumber:''}
 
@@ -80,6 +77,8 @@ const ManagerAdd = () => {
           ))
         }
       </div>
+      <h5>Vaš predstavnik nije zainteresiran, preuzmi te ulogu i kasnije mu predajte autorizaciju</h5>
+
       <Footer />
     </div>
   )

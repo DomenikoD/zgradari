@@ -17,7 +17,7 @@ const PollOverview = (props) => {
 
 <div className="poll list" >
 <Tabs defaultActiveKey="home" transition={false} id="noanim-tab-example">
-  <Tab eventKey="active" title="Aktivne">
+  <Tab title="Aktivne">
   <ListGroup className="flex-column" defaultActiveKey="#link1" >
   <ListGroup.Item action href="#link1">
     Želite li uređenje parka<ProgressBar  now={40} />

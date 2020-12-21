@@ -49,6 +49,18 @@ type Project  @model
   rating: Int!
   comments:[Comment] @connection(keyName:"byProject", fields:["id"])
 }
+type Poll  @model
+  @key(name:"byBuilding", fields:["buildingID"], queryField:"pollByBuilding")
+ {
+  id: ID!
+  buildingID: ID!
+  name: String!
+  description: String!
+  answers: [String!]
+  answersCount:[int!]
+  comments:[Comment] @connection(keyName:"byProject", fields:["id"])
+}
+
 type Comment @model
   @key(name: "byTenant", fields: ["tenantID"], queryField:"commentsByTenant") 
   @key(name: "byBuilding", fields: ["buildingID"], queryField:"commentsByBuilding") 
