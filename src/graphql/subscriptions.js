@@ -331,6 +331,84 @@ export const onDeleteProject = /* GraphQL */ `
     }
   }
 `;
+export const onCreatePoll = /* GraphQL */ `
+  subscription OnCreatePoll {
+    onCreatePoll {
+      id
+      buildingID
+      name
+      description
+      answers
+      answersCount
+      comments {
+        items {
+          id
+          tenantID
+          buildingID
+          projectID
+          content
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdatePoll = /* GraphQL */ `
+  subscription OnUpdatePoll {
+    onUpdatePoll {
+      id
+      buildingID
+      name
+      description
+      answers
+      answersCount
+      comments {
+        items {
+          id
+          tenantID
+          buildingID
+          projectID
+          content
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeletePoll = /* GraphQL */ `
+  subscription OnDeletePoll {
+    onDeletePoll {
+      id
+      buildingID
+      name
+      description
+      answers
+      answersCount
+      comments {
+        items {
+          id
+          tenantID
+          buildingID
+          projectID
+          content
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
 export const onCreateComment = /* GraphQL */ `
   subscription OnCreateComment {
     onCreateComment {

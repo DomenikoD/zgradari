@@ -210,6 +210,56 @@ export const listProjects = /* GraphQL */ `
     }
   }
 `;
+export const getPoll = /* GraphQL */ `
+  query GetPoll($id: ID!) {
+    getPoll(id: $id) {
+      id
+      buildingID
+      name
+      description
+      answers
+      answersCount
+      comments {
+        items {
+          id
+          tenantID
+          buildingID
+          projectID
+          content
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listPolls = /* GraphQL */ `
+  query ListPolls(
+    $filter: ModelPollFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listPolls(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        buildingID
+        name
+        description
+        answers
+        answersCount
+        comments {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
 export const getComment = /* GraphQL */ `
   query GetComment($id: ID!) {
     getComment(id: $id) {
@@ -306,6 +356,38 @@ export const projectsByBuilding = /* GraphQL */ `
         name
         cost
         rating
+        comments {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const pollByBuilding = /* GraphQL */ `
+  query PollByBuilding(
+    $buildingID: ID
+    $sortDirection: ModelSortDirection
+    $filter: ModelPollFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    pollByBuilding(
+      buildingID: $buildingID
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        buildingID
+        name
+        description
+        answers
+        answersCount
         comments {
           nextToken
         }

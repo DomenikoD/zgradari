@@ -367,6 +367,93 @@ export const deleteProject = /* GraphQL */ `
     }
   }
 `;
+export const createPoll = /* GraphQL */ `
+  mutation CreatePoll(
+    $input: CreatePollInput!
+    $condition: ModelPollConditionInput
+  ) {
+    createPoll(input: $input, condition: $condition) {
+      id
+      buildingID
+      name
+      description
+      answers
+      answersCount
+      comments {
+        items {
+          id
+          tenantID
+          buildingID
+          projectID
+          content
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updatePoll = /* GraphQL */ `
+  mutation UpdatePoll(
+    $input: UpdatePollInput!
+    $condition: ModelPollConditionInput
+  ) {
+    updatePoll(input: $input, condition: $condition) {
+      id
+      buildingID
+      name
+      description
+      answers
+      answersCount
+      comments {
+        items {
+          id
+          tenantID
+          buildingID
+          projectID
+          content
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deletePoll = /* GraphQL */ `
+  mutation DeletePoll(
+    $input: DeletePollInput!
+    $condition: ModelPollConditionInput
+  ) {
+    deletePoll(input: $input, condition: $condition) {
+      id
+      buildingID
+      name
+      description
+      answers
+      answersCount
+      comments {
+        items {
+          id
+          tenantID
+          buildingID
+          projectID
+          content
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
 export const createComment = /* GraphQL */ `
   mutation CreateComment(
     $input: CreateCommentInput!
