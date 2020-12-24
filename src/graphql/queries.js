@@ -27,6 +27,7 @@ export const getBuilding = /* GraphQL */ `
           email
           phoneNumber
           aboutMe
+          ownership
           createdAt
           updatedAt
         }
@@ -121,6 +122,7 @@ export const getTenant = /* GraphQL */ `
       email
       phoneNumber
       aboutMe
+      ownership
       comments {
         items {
           id
@@ -152,6 +154,7 @@ export const listTenants = /* GraphQL */ `
         email
         phoneNumber
         aboutMe
+        ownership
         comments {
           nextToken
         }

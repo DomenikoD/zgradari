@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Button, ListGroup } from "react-bootstrap";
+import { ListGroup } from "react-bootstrap";
 import CommentsList from "../comment/CommentsList";
-import Amplify, { API, graphqlOperation } from "aws-amplify";
+import  { API, graphqlOperation } from "aws-amplify";
 import { createProject } from "../graphql/mutations";
 import { listProjects } from "../graphql/queries";
 import Header from "./Header";
@@ -83,12 +83,11 @@ const ProjectOverview = (props) => {
 
       <div className="projects list">
         <ListGroup className="flex-column" defaultActiveKey="#link1">
-          {/* map po nazivima projekata */}
+          {/* map po nazivima projekata, bolje dodati u zasebnu komponentu, i onKlik handler. */}
           <h3>Lista projekata</h3>
           {projects.map((project, index) => (
             <div key={project.id ? project.id : index} style={styles.manager}>
               <ListGroup.Item action>{project.name}</ListGroup.Item>
-
               <p style={styles.managerInfo}>Cijena: {project.cost} Ocjena: {project.rating}/10</p>
             </div>
           ))}

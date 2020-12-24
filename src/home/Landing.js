@@ -15,6 +15,13 @@ const Landing = () => {
 Korisnici aplikacije su predstavnik stanara i stanari vlasnici. U daljnjem razvoju i ostali dionici provedenih i izglasanih projekta.
   </p>
   <p>
+   Isprobajte korisnička sučelja i uvjerite se u prednosti.
+  </p>
+  <p>
+  <Button href="upravitelj" variant="link">Sučelje predstavnika stanara</Button>
+  <Button href="vlasnik" variant="link">Sučelje stanara/suvlasnika</Button>
+  </p>
+  <p>
   <Button href="onama" variant="link">O nama</Button>
   <Button href='https://github.com/DomenikoD/zgradari' variant="link">Izvorni kod</Button>
   </p>

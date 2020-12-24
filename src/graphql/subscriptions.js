@@ -27,6 +27,7 @@ export const onCreateBuilding = /* GraphQL */ `
           email
           phoneNumber
           aboutMe
+          ownership
           createdAt
           updatedAt
         }
@@ -63,6 +64,7 @@ export const onUpdateBuilding = /* GraphQL */ `
           email
           phoneNumber
           aboutMe
+          ownership
           createdAt
           updatedAt
         }
@@ -99,6 +101,7 @@ export const onDeleteBuilding = /* GraphQL */ `
           email
           phoneNumber
           aboutMe
+          ownership
           createdAt
           updatedAt
         }
@@ -187,6 +190,7 @@ export const onCreateTenant = /* GraphQL */ `
       email
       phoneNumber
       aboutMe
+      ownership
       comments {
         items {
           id
@@ -213,6 +217,7 @@ export const onUpdateTenant = /* GraphQL */ `
       email
       phoneNumber
       aboutMe
+      ownership
       comments {
         items {
           id
@@ -239,6 +244,7 @@ export const onDeleteTenant = /* GraphQL */ `
       email
       phoneNumber
       aboutMe
+      ownership
       comments {
         items {
           id

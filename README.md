@@ -39,6 +39,7 @@ Prihvaćanje i izvršavanje ponuda
 Naplačivanje posredničke provizije  
 Vođenje dokumentacije i BIM-a zgrade  
 Vođenje i upravljanje pričuvom  
+Refactoring komonenti jer se ponavljaju uhuh  
 
 ### DONE
 TRENUTNO STANJE APLIKACIJE DOSTUPNO [OVDJE](https://dev.d3hycocxzbzsx2.amplifyapp.com/)  

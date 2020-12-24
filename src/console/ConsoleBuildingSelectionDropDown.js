@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Dropdown, Row, Nav, Col, Tab, FormControl } from "react-bootstrap";
-
+// vidi samo manager- sluzi za odabir između više zgrada kojima upravlja
 const ConsoleBuildingSelectionDropDown = () => {
   // The forwardRef is important!!
   // Dropdown needs access to the DOM node in order to position the Menu

@@ -28,9 +28,10 @@ const Header = () => {
               </NavDropdown.Item>              
               <NavDropdown.Divider />
               <NavDropdown.Item href="/prijava">Javi se nama</NavDropdown.Item>
-            </NavDropdown>
-            <Nav.Link href="/upravitelj">Upravitelj UI</Nav.Link>
-            <Nav.Link href="/vlasnik">Vlasnik UI</Nav.Link>
+            </NavDropdown>              
+
+            <Nav.Link href="/upravitelj">Upravitelj - sučelje</Nav.Link>
+            <Nav.Link href="/vlasnik">Vlasnik - sučelje</Nav.Link>
 
           </Nav>
           <Form inline>

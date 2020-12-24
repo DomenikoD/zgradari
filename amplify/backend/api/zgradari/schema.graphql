@@ -35,6 +35,7 @@ type Tenant implements Person
     email: String!
     phoneNumber: String!
     aboutMe:String
+    ownership:String
     comments:[Comment] @connection(keyName:"byTenant", fields:["id"])
   }
 

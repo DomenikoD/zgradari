@@ -16,7 +16,7 @@ const Footer = () => {
       Izrada u tijeku
     </div>
     <div class="col">
-      Prvih 50 ZGRADA - zauvijek besplatno! Otvorene prijave.
+      Zauvijek besplatno! Otvorene prijave.
     </div>
   </div>
   <p></p>

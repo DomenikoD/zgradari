@@ -9,6 +9,7 @@ import TenantOverview from "../tenant/TenantOverview";
 import InfosOverview from "../communication/InfosOverview";
 import SettingsOverview from "../settings/SettingsOverview";
 import BillingOverview from "../billing/BillingOverview";
+import DocumentsOverview from "../documents/DocumentsOverview";
 
 const ConsoleSideBar = (props) => {
   const buidling = {
@@ -50,6 +51,9 @@ const ConsoleSideBar = (props) => {
                 <Nav.Item>
                   <Nav.Link eventKey="infos">Obavijesti</Nav.Link>
                 </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link eventKey="documents">Dokumenti</Nav.Link>
+                </Nav.Item>
                 <Nav.Item hidden={!props.userInfo.isAdmin}>
                   <Nav.Link eventKey="settings">Postavke</Nav.Link>
                 </Nav.Item>
@@ -80,6 +84,9 @@ const ConsoleSideBar = (props) => {
                 </Tab.Pane>
                 <Tab.Pane eventKey="infos">
                   <InfosOverview building={buidling} userInfo={props.userInfo} />
+                </Tab.Pane>
+                <Tab.Pane eventKey="documents">
+                  <DocumentsOverview building={buidling} userInfo={props.userInfo} />
                 </Tab.Pane>
                 <Tab.Pane eventKey="settings">
                 <SettingsOverview building={buidling} />
