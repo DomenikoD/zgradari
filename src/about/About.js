@@ -23,6 +23,15 @@ const About = () => {
         <p>
           Ideje otovreno prihvaćamo za diskusiju i implementaciju, a specijalna rješenja izrađujemo na zahtjev.
         </p>
+        <p>Isprobajte korisnička sučelja i uvjerite se u prednosti.</p>
+          <p>
+            <Button href="upravitelj" variant="link">
+              Sučelje predstavnika stanara
+            </Button>
+            <Button href="vlasnik" variant="link">
+              Sučelje stanara/suvlasnika
+            </Button>
+          </p>
         <p>
           <Button href="onama" variant="link">
             O nama

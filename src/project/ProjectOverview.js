@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { ListGroup } from "react-bootstrap";
+import { Table } from "react-bootstrap";
 import CommentsList from "../comment/CommentsList";
-import  { API, graphqlOperation } from "aws-amplify";
+import { API, graphqlOperation } from "aws-amplify";
 import { createProject } from "../graphql/mutations";
 import { listProjects } from "../graphql/queries";
 import Header from "./Header";
@@ -82,23 +82,38 @@ const ProjectOverview = (props) => {
       </div>
 
       <div className="projects list">
-        <ListGroup className="flex-column" defaultActiveKey="#link1">
-          {/* map po nazivima projekata, bolje dodati u zasebnu komponentu, i onKlik handler. */}
-          <h3>Lista projekata</h3>
-          {projects.map((project, index) => (
-            <div key={project.id ? project.id : index} style={styles.manager}>
-              <ListGroup.Item action>{project.name}</ListGroup.Item>
-              <p style={styles.managerInfo}>Cijena: {project.cost} Ocjena: {project.rating}/10</p>
-            </div>
-          ))}
-        </ListGroup>
+        <h5>Lista projekata</h5>
+
+        <Table striped bordered hover>
+          <thead>
+            <tr>
+              <th>Naziv projekta</th>
+              <th>Cijena</th>
+              <th>Ocjena</th>
+              <th>Edit</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {projects.map((project, index) => (
+              <tr key={project.id ? project.id : index} style={styles.manager}>
+                <th>{project.name}</th>
+                <th>{project.cost}</th>
+                <th>{project.rating}</th>
+                <th>X/0</th>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
       </div>
       <p></p>
 
       <h5>Pregled projekta: Uređenje stubišta</h5>
       <p></p>
+     
       <h5>Komentari</h5>
       <CommentsList />
+      
     </div>
   );
 };
