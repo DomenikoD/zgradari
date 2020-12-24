@@ -3,7 +3,7 @@ import { Table } from "react-bootstrap";
 import CommentsList from "../comment/CommentsList";
 import { API, graphqlOperation } from "aws-amplify";
 import { createProject } from "../graphql/mutations";
-import { listProjects } from "../graphql/queries";
+import { listProjects, commentsByProject } from "../graphql/queries";
 import Header from "./Header";
 
 const initialProjectState = { name: "", cost: "0.00", rating: "" };
@@ -11,6 +11,7 @@ const initialProjectState = { name: "", cost: "0.00", rating: "" };
 const ProjectOverview = (props) => {
   const [formState, setFormState] = useState(initialProjectState);
   const [projects, setProjects] = useState([]);
+  //const [comments, setComments] = useState([]);
 
   useEffect(() => {
     fetchProjects();
@@ -28,13 +29,16 @@ const ProjectOverview = (props) => {
       console.log("error fetchProjects: ", err);
     }
   }
-  async function fetchCommentsByProjectId(ID) {
+  async function fetchCommentsByProjectId() {
     try {
-      console.log("error not implemented: ");
+      const commentsData = await API.graphql(graphqlOperation(commentsByProject));
+      const comments = commentsData.data.listComments.items;
+      //setComments(comments);
     } catch (err) {
       console.log("error fetchProjects: ", err);
     }
   }
+  
 
   async function addProject() {
     try {
@@ -112,7 +116,8 @@ const ProjectOverview = (props) => {
       <p></p>
      
       <h5>Komentari</h5>
-      <CommentsList />
+      
+   
       
     </div>
   );

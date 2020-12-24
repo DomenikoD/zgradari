@@ -22,11 +22,11 @@ const App = () => {
         <Route path="/pocetna" component={TODO} />
         <Route path="/prijava" component={TODO} />
         <Route path="/registracija" component={TODO} />
-        <Route path="/onama" component={About} />
-        <Route path="/pozovipredstavnika" component={ManagerAdd} />
-        <Route path="/upravitelj" component={ManagerMain} />
-        <Route path="/vlasnik" component={TenantMain} />
-        <Route path="/admin" component={AdminOverview} />
+        <Route path="/onama" component={TODO} />
+        <Route path="/pozovipredstavnika" component={TODO} />
+        <Route path="/upravitelj" component={TODO} />
+        <Route path="/vlasnik" component={TODO} />
+        <Route path="/admin" component={TODO} />
       </Switch>
     </Router>
   );

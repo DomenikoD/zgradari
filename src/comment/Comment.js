@@ -4,12 +4,12 @@ import { Button } from "react-bootstrap";
 const Comment = (props) => {
   const comment = {
     name: "DomenikoD",
-    contetn: "Ovaj projekt je dobra stvar",
+    content: "Ovaj projekt je dobra stvar",
     date: "2020-02-10 11:51:59",
   };
   return (
-    <div >
-      <p>{comment.name}:  "{comment.contetn}" {comment.date}</p>
+    <div key={props.key} >
+      <p>KOJE PISO : "{props.comment.content}" </p>
       <p></p>
     </div>
   );

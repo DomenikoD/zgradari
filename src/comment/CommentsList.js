@@ -2,17 +2,12 @@ import React from "react";
 import { Button } from "react-bootstrap";
 import Comment from "./Comment";
 
-const CPcomponent = () => {
+const CommentsList = (props) => {
   return (
     <div>
-      <Comment />
-      <Comment />
-      <Comment />
-      <Comment />
-      <Comment />
-      <Comment />
+      {console.log(props.comments)}
     </div>
   );
 };
 
-export default CPcomponent;
+export default CommentsList;

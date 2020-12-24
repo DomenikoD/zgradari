@@ -1,22 +1,12 @@
-import React from 'react'
-import { Button } from 'react-bootstrap';
-
+import React from "react";
+import { Button } from "react-bootstrap";
 
 const CPcomponent = () => {
-  
-
-  return(
-    <div >
-
-
-
-
-
+  return (
+    <div>
+      <p>empty copy/paste component</p>
     </div>
-  )
+  );
+};
 
-}
-
-
-
-export default CPcomponent
+export default CPcomponent;
