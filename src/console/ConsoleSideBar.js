@@ -20,6 +20,8 @@ const ConsoleSideBar = (props) => {
 
   return (
     <div>
+          {console.log('rendered ConsoleSideBar')}
+
       <div className="izborbnik bocni">
         <Tab.Container
           id="left-tabs-example"

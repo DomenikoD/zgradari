@@ -39,7 +39,6 @@ const LandingCarousel = () => {
               najoptimalnijeg.
             </p>
           </Carousel.Caption>
-
         </Carousel.Item>
       </Carousel>
     </div>
