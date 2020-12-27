@@ -1,7 +1,8 @@
 # Aplikacija za vođenje zgrade
 
 Ovom web-aplikacijom povećava se interakcija svih suvlasnika zgrade, te na taj način osvještava briga za zajedničko vlasništvo, na način da se ono obnavlja, uređuje, predlažu ideje i vode glasovanja.
-Korisnici aplikacije su predstavnik stanara i stanari vlasnici. U daljnjem razvoju i ostali dionici provedenih i izglasanih projekta.
+Korisnici aplikacije su predstavnik stanara i stanari vlasnici. U daljnjem razvoju i ostali dionici provedenih i izglasanih projekta.  
+Aplikacija je prihvaćena od strane AWS Activate Founders subvencije.  
 
 ## Predstavnik stanara
 
@@ -46,9 +47,9 @@ TRENUTNO STANJE APLIKACIJE DOSTUPNO [OVDJE](https://dev.d3hycocxzbzsx2.amplifyap
 
 Postavljen amplify stack  
 Definirana pocetna baza na graphgl-u  
-Početna stranica za dodavanje Predstavnika stanara  
-Stranica administracije za Predstavnika stanara
-
+Izrađeno probno sučelje za Upravitelja i Vlasnika
+Upravitelj dodaje projekte
+Dotan aws amplify auth (potrebno iskodirati login/signin/signup)
 
 ### Bilješke
 Dodati u AWS Amplify u App settings Rewrites and redirects - kako bi proradio react-router-dom 
@@ -59,4 +60,11 @@ Dodati u AWS Amplify u App settings Rewrites and redirects - kako bi proradio re
         "status": "200",
         "condition": null
     }
-]
+]  
+
+Zaboravio sam bio na uglate zagrade, pa se otvorila petlja rendera i dohvata podataka (skuženo na vrijeme)
+```javascript
+  useEffect(() => {  
+    fetchProjects();  
+  }, []);  
+  ```

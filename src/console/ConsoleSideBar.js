@@ -13,6 +13,7 @@ import DocumentsOverview from "../documents/DocumentsOverview";
 
 const ConsoleSideBar = (props) => {
   const buidling = {
+    buildingID: "82eb6b6a-241a-4f6c-bdad-67be5df1e89f",
     buildingName: "Vatroslava Jagića",
     buildingAddress: "Vatroslava Jagića 25-31",
     manager: { name: "Domeniko", phone: "1234" },

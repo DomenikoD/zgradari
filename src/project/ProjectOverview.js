@@ -3,7 +3,7 @@ import { Table } from "react-bootstrap";
 import CommentsList from "../comment/CommentsList";
 import { API, graphqlOperation } from "aws-amplify";
 import { createProject } from "../graphql/mutations";
-import { listProjects, commentsByProject } from "../graphql/queries";
+import { projectsByBuilding, commentsByProject } from "../graphql/queries";
 import Header from "./Header";
 
 const initialProjectState = { name: "", cost: "0.00", rating: "" };
@@ -11,30 +11,33 @@ const initialProjectState = { name: "", cost: "0.00", rating: "" };
 const ProjectOverview = (props) => {
   const [formState, setFormState] = useState(initialProjectState);
   const [projects, setProjects] = useState([]);
-  //const [comments, setComments] = useState([]);
+  const [comments, setComments] = useState([]);
 
   useEffect(() => {
     fetchProjects();
   }, []);
+
   function setInput(key, value) {
     setFormState({ ...formState, [key]: value });
   }
 
   async function fetchProjects() {
     try {
-      {console.log('GET PROJECTS')}
-      const projectsData = await API.graphql(graphqlOperation(listProjects));
-      const projects = projectsData.data.listProjects.items;
+      /* 82eb6b6a-241a-4f6c-bdad-67be5df1e89f props.building.buildingID */
+      console.log('GET PROJECTS projectsByBuilding buildingID: ', props.building.buildingID)
+      const projectsData = await API.graphql(graphqlOperation(projectsByBuilding, {buildingID: props.building.buildingID}));
+      const projects = projectsData.data.projectsByBuilding.items;
       setProjects(projects);
     } catch (err) {
       console.log("error fetchProjects: ", err);
     }
   }
-  async function fetchCommentsByProjectId() {
+  async function fetchCommentsByProjectId(id) {
     try {
-      const commentsData = await API.graphql(graphqlOperation(commentsByProject));
-      const comments = commentsData.data.listComments.items;
-      //setComments(comments);
+      const commentsData = await API.graphql(graphqlOperation(commentsByProject, {projectID: id}));
+      console.log('commentsData: ', commentsData)
+      const comments = commentsData.data.commentsByProject.items;
+      setComments(comments);
     } catch (err) {
       console.log("error fetchProjects: ", err);
     }
@@ -104,7 +107,7 @@ const ProjectOverview = (props) => {
 
           <tbody>
             {projects.map((project, index) => (
-              <tr key={project.id ? project.id : index} style={styles.manager}>
+              <tr onClick={() => {fetchCommentsByProjectId(project.id)}} key={project.id ? project.id : index} style={styles.manager}>
                 <th>{project.name}</th>
                 <th>{project.cost}</th>
                 <th>{project.rating}</th>
@@ -121,7 +124,7 @@ const ProjectOverview = (props) => {
      
       <h5>Komentari</h5>
       
-   
+              <CommentsList comments={comments}/>
       {console.log('RENDER ProjectOverview FIN')}
 
     </div>

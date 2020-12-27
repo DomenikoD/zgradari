@@ -28,7 +28,7 @@ const BuildingOverview = (props) => {
             <td>NEW</td>
           </tr>
           <tr>
-          <td>Poruke</td>
+          <td>Komentari</td>
             <td>52</td>
             <td>50</td>
             <td>NEW</td>

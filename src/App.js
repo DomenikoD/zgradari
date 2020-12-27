@@ -25,8 +25,8 @@ const App = () => {
         <Route path="/registracija" component={TODO} />
         <Route path="/onama" component={About} />
         <Route path="/pozovipredstavnika" component={ManagerAdd} />
-        <Route path="/upravitelj" component={TenantMain} />
-        <Route path="/vlasnik" component={TODO} />
+        <Route path="/upravitelj" component={ManagerMain} />
+        <Route path="/vlasnik" component={TenantMain} />
         <Route path="/admin" component={AdminOverview} />
       </Switch>
     </Router>
