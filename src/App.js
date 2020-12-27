@@ -16,19 +16,26 @@ Amplify.configure(awsExports);
 
 const App = () => {
   return (
+    
     <Router>
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/pocetna" component={TODO} />
         <Route path="/prijava" component={TODO} />
         <Route path="/registracija" component={TODO} />
-        <Route path="/onama" component={TODO} />
-        <Route path="/pozovipredstavnika" component={TODO} />
-        <Route path="/upravitelj" component={ManagerMain} />
+        <Route path="/onama" component={About} />
+        <Route path="/pozovipredstavnika" component={ManagerAdd} />
+        <Route path="/upravitelj" component={TenantMain} />
         <Route path="/vlasnik" component={TODO} />
-        <Route path="/admin" component={TODO} />
+        <Route path="/admin" component={AdminOverview} />
       </Switch>
     </Router>
+
+   /* 
+<div>
+  IN WORK
+</div>
+*/
   );
 };
 

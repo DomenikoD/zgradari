@@ -15,13 +15,14 @@ const ProjectOverview = (props) => {
 
   useEffect(() => {
     fetchProjects();
-  });
+  }, []);
   function setInput(key, value) {
     setFormState({ ...formState, [key]: value });
   }
 
   async function fetchProjects() {
     try {
+      {console.log('GET PROJECTS')}
       const projectsData = await API.graphql(graphqlOperation(listProjects));
       const projects = projectsData.data.listProjects.items;
       setProjects(projects);
@@ -43,6 +44,8 @@ const ProjectOverview = (props) => {
   async function addProject() {
     try {
       if (!formState.name || !formState.cost || !formState.rating) return;
+      {console.log('SET PROJECT')}
+
       const project = { ...formState };
       project.buildingID = "82eb6b6a-241a-4f6c-bdad-67be5df1e89f";
       setProjects([...projects, project]);
@@ -58,6 +61,7 @@ const ProjectOverview = (props) => {
 
   return (
     <div>
+      {console.log('RENDER ProjectOverview')}
       <Header building={props.building} manager={props.building} />
 
       <div style={styles.container}>
@@ -118,7 +122,8 @@ const ProjectOverview = (props) => {
       <h5>Komentari</h5>
       
    
-      
+      {console.log('RENDER ProjectOverview FIN')}
+
     </div>
   );
 };

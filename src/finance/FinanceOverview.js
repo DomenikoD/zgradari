@@ -3,6 +3,8 @@ import { Button, Table, ProgressBar } from "react-bootstrap";
 const FinanceOverview = (props) => {
   return (
     <div>
+            {console.log("RENDER FinanceOverview")}
+
       <h1>Pregled pričuve zgrade {props.building.buildingName}</h1>
       <p>Adresa: {props.building.buildingAddress}</p>
       <p>Predstavnik: {props.building.manager.name}</p>

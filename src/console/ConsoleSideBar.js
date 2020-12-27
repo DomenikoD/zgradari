@@ -20,7 +20,7 @@ const ConsoleSideBar = (props) => {
 
   return (
     <div>
-          {console.log('rendered ConsoleSideBar')}
+      {console.log("RENDER ConsoleSideBar")}
 
       <div className="izborbnik bocni">
         <Tab.Container
@@ -41,7 +41,7 @@ const ConsoleSideBar = (props) => {
                 <Nav.Item>
                   <Nav.Link eventKey="queries">Ankete</Nav.Link>
                 </Nav.Item>
-                <Nav.Item >
+                <Nav.Item>
                   <Nav.Link eventKey="building money">Pričuva</Nav.Link>
                 </Nav.Item>
                 <Nav.Item hidden={!props.userInfo.isAdmin}>
@@ -85,22 +85,29 @@ const ConsoleSideBar = (props) => {
                   <TenantOverview building={buidling} />
                 </Tab.Pane>
                 <Tab.Pane eventKey="infos">
-                  <InfosOverview building={buidling} userInfo={props.userInfo} />
+                  <InfosOverview
+                    building={buidling}
+                    userInfo={props.userInfo}
+                  />
                 </Tab.Pane>
                 <Tab.Pane eventKey="documents">
-                  <DocumentsOverview building={buidling} userInfo={props.userInfo} />
+                  <DocumentsOverview
+                    building={buidling}
+                    userInfo={props.userInfo}
+                  />
                 </Tab.Pane>
                 <Tab.Pane eventKey="settings">
-                <SettingsOverview building={buidling} />
+                  <SettingsOverview building={buidling} />
                 </Tab.Pane>
                 <Tab.Pane eventKey="billing">
-                <BillingOverview building={buidling} />
+                  <BillingOverview building={buidling} />
                 </Tab.Pane>
               </Tab.Content>
             </Col>
           </Row>
         </Tab.Container>
       </div>
+      {console.log("RENDER ConsoleSideBar FIN")}
     </div>
   );
 };

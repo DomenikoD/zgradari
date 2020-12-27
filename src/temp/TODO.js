@@ -10,13 +10,13 @@ const TODO = () => {
       <Header />
       <div>
         <Jumbotron>
-          <h1>BUG ISPRAVKA u tijeku!</h1>
+          <h1>Prijave u tijeku!</h1>
           <p>Javite se na email: domeniko.divjak@gmail.com </p>
           <p>Zauvijek besplatno. </p>
           <p></p>
           <p></p>
           <p></p>
-          <p>(NE)Isprobajte korisnička sučelja i uvjerite se u prednosti.</p>
+          <p>(Isprobajte korisnička sučelja i uvjerite se u prednosti.</p>
           <p>
             <Button href="upravitelj" variant="link">
               Sučelje predstavnika stanara

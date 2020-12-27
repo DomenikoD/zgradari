@@ -10,10 +10,13 @@ const ManagerMain = () => {
   }
   return (
     <div>
+          {console.log('RENDER ManagerMain')}
+
       <Header />
       <ConsoleBuildingSelectionDropDown />
       <ConsoleSideBar userInfo={userInfo} />
-      
+      {console.log('RENDER ManagerMain FIN')}
+
     </div>
   );
 };

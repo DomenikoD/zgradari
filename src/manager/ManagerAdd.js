@@ -16,7 +16,7 @@ const ManagerAdd = () => {
 
   useEffect(() => {
     fetchManagers();
-  });
+  }, []);
   function setInput(key, value) {
     setFormState({ ...formState, [key]: value });
   }

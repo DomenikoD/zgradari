@@ -51,6 +51,7 @@ const ConsoleBuildingSelectionDropDown = () => {
 
   return (
     <div>
+      {console.log('RENDER ConsoleBuildingSelectionDropDown')}
       <Dropdown>
         <Dropdown.Toggle as={CustomToggle} id="dropdown-custom-components">
           Vatroslava Jagića

@@ -1,23 +1,26 @@
 {
-    "dev": {
-        "awscloudformation": {
-            "AuthRoleName": "amplify-zgradari-dev-214914-authRole",
-            "UnauthRoleArn": "arn:aws:iam::202208092634:role/amplify-zgradari-dev-214914-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::202208092634:role/amplify-zgradari-dev-214914-authRole",
-            "Region": "eu-west-1",
-            "DeploymentBucketName": "amplify-zgradari-dev-214914-deployment",
-            "UnauthRoleName": "amplify-zgradari-dev-214914-unauthRole",
-            "StackName": "amplify-zgradari-dev-214914",
-            "StackId": "arn:aws:cloudformation:eu-west-1:202208092634:stack/amplify-zgradari-dev-214914/d6c87f40-3e4d-11eb-8f5f-0ad191d527b7",
-            "AmplifyAppId": "d3hycocxzbzsx2"
-        },
-        "categories": {
-            "hosting": {
-                "amplifyhosting": {
-                    "appId": "d3hycocxzbzsx2",
-                    "type": "manual"
-                }
-            }
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-zgradari-dev-214914-authRole",
+      "UnauthRoleArn": "arn:aws:iam::202208092634:role/amplify-zgradari-dev-214914-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::202208092634:role/amplify-zgradari-dev-214914-authRole",
+      "Region": "eu-west-1",
+      "DeploymentBucketName": "amplify-zgradari-dev-214914-deployment",
+      "UnauthRoleName": "amplify-zgradari-dev-214914-unauthRole",
+      "StackName": "amplify-zgradari-dev-214914",
+      "StackId": "arn:aws:cloudformation:eu-west-1:202208092634:stack/amplify-zgradari-dev-214914/d6c87f40-3e4d-11eb-8f5f-0ad191d527b7",
+      "AmplifyAppId": "d3hycocxzbzsx2"
+    },
+    "categories": {
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d3hycocxzbzsx2",
+          "type": "manual"
         }
+      },
+      "auth": {
+        "zgradari925eeb4e": {}
+      }
     }
+  }
 }

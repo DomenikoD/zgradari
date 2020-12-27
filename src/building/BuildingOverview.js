@@ -1,8 +1,10 @@
 import React from "react";
-import { Button, Table, ProgressBar } from "react-bootstrap";
+import { Table, ProgressBar } from "react-bootstrap";
+
 const BuildingOverview = (props) => {
   return (
     <div>
+      {console.log('RENDER BuildingOverview')}
       <h1>Pregled zgrade {props.building.buildingName}</h1>
       <p>Adresa: {props.building.buildingAddress}</p>
       <p>Predstavnik: {props.building.manager.name}</p>

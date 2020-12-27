@@ -12,6 +12,8 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <div>
+                {console.log('RENDER Header')}
+
       <Navbar bg="light" expand="lg">
         <Link to="/">
           <Navbar.Brand>ZGRADARI</Navbar.Brand>

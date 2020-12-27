@@ -8,6 +8,8 @@ import { listTenants } from "../graphql/queries";
 const DocumentsOverview = (props) => {
   return (
     <div>
+            {console.log("RENDER DocumentsOverview")}
+
       <Header building={props.building} manager={props.building} />
 
       <div className="table">

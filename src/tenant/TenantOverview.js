@@ -19,13 +19,16 @@ const TenantOverview = (props) => {
 
   useEffect(() => {
     fetchTenants();
-  });
+  }, []);
+  
   function setInput(key, value) {
     setFormState({ ...formState, [key]: value });
   }
 
   async function fetchTenants() {
     try {
+      console.log('GET TENANTS')
+
       const tenantsData = await API.graphql(graphqlOperation(listTenants));
       const tenants = tenantsData.data.listTenants.items;
       setTenants(tenants);
@@ -44,6 +47,8 @@ const TenantOverview = (props) => {
         !formState.ownership
       )
         return;
+        console.log('SET TENANT')
+
       const tenant = { ...formState };
       tenant.buildingID = "82eb6b6a-241a-4f6c-bdad-67be5df1e89f";
       setTenants([...tenants, tenant]);
@@ -56,6 +61,7 @@ const TenantOverview = (props) => {
   }
   return (
     <div>
+      {console.log('RENDER TENANTS OVERVEIW')}
       <Header building={props.building} manager={props.building} />
 
       <div style={styles.container}>
@@ -122,6 +128,8 @@ const TenantOverview = (props) => {
           </tbody>
         </Table>
       </div>
+      {console.log('RENDER TENANTS OVERVEIW FIN')}
+
     </div>
   );
 };
