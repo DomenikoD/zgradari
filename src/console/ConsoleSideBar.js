@@ -68,13 +68,13 @@ const ConsoleSideBar = (props) => {
             <Col sm={9}>
               <Tab.Content>
                 <Tab.Pane eventKey="building overview">
-                  <BuildingOverview building={buidling} />
+                  <BuildingOverview building={buidling} userInfo={props.userInfo}/>
                 </Tab.Pane>
                 <Tab.Pane eventKey="projects">
-                  <ProjectOverview building={buidling} />
+                  <ProjectOverview building={buidling} userInfo={props.userInfo}/>
                 </Tab.Pane>
                 <Tab.Pane eventKey="queries">
-                  <PollOverview building={buidling} />
+                  <PollOverview building={buidling} userInfo={props.userInfo}/>
                 </Tab.Pane>
                 <Tab.Pane eventKey="building money">
                   <FinanceOverview building={buidling} />

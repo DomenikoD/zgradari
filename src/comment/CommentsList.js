@@ -8,7 +8,7 @@ const CommentsList = (props) => {
       {console.log("CommentsList: props.comments", props.comments)}
       {props.comments !== undefined &&
         props.comments.map((comment, index) => (
-          <p key={comment.id ? comment.id : index}>{comment.content}</p>
+          <p key={comment.id ? comment.id : index}>{comment.content} @{comment.createdAt}</p>
         ))}
       {props.comments === undefined || props.comments.length === 0 && <p>Nema komentara</p>}
     </div>

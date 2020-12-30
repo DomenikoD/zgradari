@@ -5,13 +5,16 @@ import { API, graphqlOperation } from "aws-amplify";
 import { createProject } from "../graphql/mutations";
 import { projectsByBuilding, commentsByProject } from "../graphql/queries";
 import Header from "./Header";
+import CommentAdd from "../comment/CommentAdd";
 
 const initialProjectState = { name: "", cost: "0.00", rating: "" };
+const selectedProjectData = { projectID: "", name: "" };
 
 const ProjectOverview = (props) => {
   const [formState, setFormState] = useState(initialProjectState);
   const [projects, setProjects] = useState([]);
   const [comments, setComments] = useState([]);
+  const [selectedProject, setSelectedProject] = useState(selectedProjectData);
 
   useEffect(() => {
     fetchProjects();
@@ -24,33 +27,43 @@ const ProjectOverview = (props) => {
   async function fetchProjects() {
     try {
       /* 82eb6b6a-241a-4f6c-bdad-67be5df1e89f props.building.buildingID */
-      console.log('GET PROJECTS projectsByBuilding buildingID: ', props.building.buildingID)
-      const projectsData = await API.graphql(graphqlOperation(projectsByBuilding, {buildingID: props.building.buildingID}));
+      console.log(
+        "GET PROJECTS projectsByBuilding buildingID: ",
+        props.building.buildingID
+      );
+      const projectsData = await API.graphql(
+        graphqlOperation(projectsByBuilding, {
+          buildingID: props.building.buildingID,
+        })
+      );
       const projects = projectsData.data.projectsByBuilding.items;
       setProjects(projects);
     } catch (err) {
       console.log("error fetchProjects: ", err);
     }
   }
-  async function fetchCommentsByProjectId(id) {
+  async function fetchCommentsByProjectId(project) {
     try {
-      const commentsData = await API.graphql(graphqlOperation(commentsByProject, {projectID: id}));
-      console.log('commentsData: ', commentsData)
+      const commentsData = await API.graphql(
+        graphqlOperation(commentsByProject, { projectID: project.id })
+      );
+      console.log("commentsData: ", commentsData);
       const comments = commentsData.data.commentsByProject.items;
       setComments(comments);
     } catch (err) {
       console.log("error fetchProjects: ", err);
+    } finally {
+      setSelectedProject({ projectID: project.id, name:project.name });
     }
   }
-  
 
   async function addProject() {
     try {
       if (!formState.name || !formState.cost || !formState.rating) return;
-      {console.log('SET PROJECT')}
+      console.log("SET PROJECT");
 
       const project = { ...formState };
-      project.buildingID = "82eb6b6a-241a-4f6c-bdad-67be5df1e89f";
+      project.buildingID = props.building.buildingID;
       setProjects([...projects, project]);
       setFormState(initialProjectState);
 
@@ -60,11 +73,9 @@ const ProjectOverview = (props) => {
     }
   }
 
-  function alertClicked() {}
-
   return (
     <div>
-      {console.log('RENDER ProjectOverview')}
+      {console.log("RENDER ProjectOverview")}
       <Header building={props.building} manager={props.building} />
 
       <div style={styles.container}>
@@ -107,7 +118,13 @@ const ProjectOverview = (props) => {
 
           <tbody>
             {projects.map((project, index) => (
-              <tr onClick={() => {fetchCommentsByProjectId(project.id)}} key={project.id ? project.id : index} style={styles.manager}>
+              <tr
+                onClick={() => {
+                  fetchCommentsByProjectId(project);
+                }}
+                key={project.id ? project.id : index}
+                style={styles.manager}
+              >
                 <th>{project.name}</th>
                 <th>{project.cost}</th>
                 <th>{project.rating}</th>
@@ -121,12 +138,17 @@ const ProjectOverview = (props) => {
 
       <h5>Pregled projekta: Uređenje stubišta</h5>
       <p></p>
-     
-      <h5>Komentari</h5>
-      
-              <CommentsList comments={comments}/>
-      {console.log('RENDER ProjectOverview FIN')}
 
+      <h5>Komentari</h5>
+
+      <CommentsList comments={comments} />
+      <CommentAdd
+        project={selectedProject}
+        building={props.building}
+        userInfo={props.userInfo}
+      />
+
+      {console.log("RENDER ProjectOverview FIN")}
     </div>
   );
 };
