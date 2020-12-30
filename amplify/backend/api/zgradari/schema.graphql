@@ -66,11 +66,13 @@ type Comment @model
   @key(name: "byTenant", fields: ["tenantID"], queryField:"commentsByTenant") 
   @key(name: "byBuilding", fields: ["buildingID"], queryField:"commentsByBuilding") 
   @key(name: "byProject", fields: ["projectID"], queryField:"commentsByProject") 
+  @key(name: "byPoll", fields: ["pollID"], queryField:"commentsByPoll") 
  {
   id: ID!
   tenantID: ID!
   buildingID: ID!
   projectID: ID!
+  pollID: ID!
   content: String!
 }
 

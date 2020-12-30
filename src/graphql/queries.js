@@ -129,6 +129,7 @@ export const getTenant = /* GraphQL */ `
           tenantID
           buildingID
           projectID
+          pollID
           content
           createdAt
           updatedAt
@@ -179,6 +180,7 @@ export const getProject = /* GraphQL */ `
           tenantID
           buildingID
           projectID
+          pollID
           content
           createdAt
           updatedAt
@@ -228,6 +230,7 @@ export const getPoll = /* GraphQL */ `
           tenantID
           buildingID
           projectID
+          pollID
           content
           createdAt
           updatedAt
@@ -270,6 +273,7 @@ export const getComment = /* GraphQL */ `
       tenantID
       buildingID
       projectID
+      pollID
       content
       createdAt
       updatedAt
@@ -288,7 +292,39 @@ export const listComments = /* GraphQL */ `
         tenantID
         buildingID
         projectID
+        pollID
         content
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getDocument = /* GraphQL */ `
+  query GetDocument($id: ID!) {
+    getDocument(id: $id) {
+      id
+      buildingID
+      name
+      url
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listDocuments = /* GraphQL */ `
+  query ListDocuments(
+    $filter: ModelDocumentFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listDocuments(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        buildingID
+        name
+        url
         createdAt
         updatedAt
       }
@@ -421,6 +457,7 @@ export const commentsByTenant = /* GraphQL */ `
         tenantID
         buildingID
         projectID
+        pollID
         content
         createdAt
         updatedAt
@@ -449,6 +486,7 @@ export const commentsByBuilding = /* GraphQL */ `
         tenantID
         buildingID
         projectID
+        pollID
         content
         createdAt
         updatedAt
@@ -477,7 +515,64 @@ export const commentsByProject = /* GraphQL */ `
         tenantID
         buildingID
         projectID
+        pollID
         content
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const commentsByPoll = /* GraphQL */ `
+  query CommentsByPoll(
+    $pollID: ID
+    $sortDirection: ModelSortDirection
+    $filter: ModelCommentFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    commentsByPoll(
+      pollID: $pollID
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        tenantID
+        buildingID
+        projectID
+        pollID
+        content
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const documentsByBuilding = /* GraphQL */ `
+  query DocumentsByBuilding(
+    $buildingID: ID
+    $sortDirection: ModelSortDirection
+    $filter: ModelDocumentFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    documentsByBuilding(
+      buildingID: $buildingID
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        buildingID
+        name
+        url
         createdAt
         updatedAt
       }

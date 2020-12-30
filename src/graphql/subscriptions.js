@@ -197,6 +197,7 @@ export const onCreateTenant = /* GraphQL */ `
           tenantID
           buildingID
           projectID
+          pollID
           content
           createdAt
           updatedAt
@@ -224,6 +225,7 @@ export const onUpdateTenant = /* GraphQL */ `
           tenantID
           buildingID
           projectID
+          pollID
           content
           createdAt
           updatedAt
@@ -251,6 +253,7 @@ export const onDeleteTenant = /* GraphQL */ `
           tenantID
           buildingID
           projectID
+          pollID
           content
           createdAt
           updatedAt
@@ -276,6 +279,7 @@ export const onCreateProject = /* GraphQL */ `
           tenantID
           buildingID
           projectID
+          pollID
           content
           createdAt
           updatedAt
@@ -301,6 +305,7 @@ export const onUpdateProject = /* GraphQL */ `
           tenantID
           buildingID
           projectID
+          pollID
           content
           createdAt
           updatedAt
@@ -326,6 +331,7 @@ export const onDeleteProject = /* GraphQL */ `
           tenantID
           buildingID
           projectID
+          pollID
           content
           createdAt
           updatedAt
@@ -352,6 +358,7 @@ export const onCreatePoll = /* GraphQL */ `
           tenantID
           buildingID
           projectID
+          pollID
           content
           createdAt
           updatedAt
@@ -378,6 +385,7 @@ export const onUpdatePoll = /* GraphQL */ `
           tenantID
           buildingID
           projectID
+          pollID
           content
           createdAt
           updatedAt
@@ -404,6 +412,7 @@ export const onDeletePoll = /* GraphQL */ `
           tenantID
           buildingID
           projectID
+          pollID
           content
           createdAt
           updatedAt
@@ -422,6 +431,7 @@ export const onCreateComment = /* GraphQL */ `
       tenantID
       buildingID
       projectID
+      pollID
       content
       createdAt
       updatedAt
@@ -435,6 +445,7 @@ export const onUpdateComment = /* GraphQL */ `
       tenantID
       buildingID
       projectID
+      pollID
       content
       createdAt
       updatedAt
@@ -448,7 +459,44 @@ export const onDeleteComment = /* GraphQL */ `
       tenantID
       buildingID
       projectID
+      pollID
       content
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateDocument = /* GraphQL */ `
+  subscription OnCreateDocument {
+    onCreateDocument {
+      id
+      buildingID
+      name
+      url
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateDocument = /* GraphQL */ `
+  subscription OnUpdateDocument {
+    onUpdateDocument {
+      id
+      buildingID
+      name
+      url
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteDocument = /* GraphQL */ `
+  subscription OnDeleteDocument {
+    onDeleteDocument {
+      id
+      buildingID
+      name
+      url
       createdAt
       updatedAt
     }
