@@ -7,13 +7,14 @@ const Landing = () => {
       <Jumbotron>
         <h1>Dobro došli na Zgradare!</h1>
         <p>
-          Ovom web-aplikacijom povećava se interakcija svih suvlasnika zgrade,
-          te na taj način osvještava briga za zajedničko vlasništvo, na način da
-          se ono obnavlja, uređuje, predlažu ideje i vode glasovanja. Korisnici
-          aplikacije su predstavnik stanara i stanari vlasnici. U daljnjem
-          razvoju i ostali dionici provedenih i izglasanih projekta.
+          Povećajte se interakcija svih suvlasnika zgrade, osvjestite brigu za
+          zajedničko vlasništvo. Potaknite obnave, uređenja, predložite ideje,
+          vodite ankete, glasovanja i projekte.
+        </p>{" "}
+        <p>
+          Korisnici aplikacije su predstavnik stanara i stanari suvlasnici. 
         </p>
-        <p>Isprobajte korisnička sučelja i uvjerite se u prednosti.</p>
+        <p>Isprobajte korisnička sučelja i uvjerite se u besplatne mogućnosti.</p>
         <p>
           <Button href="upravitelj" variant="link">
             Sučelje predstavnika stanara

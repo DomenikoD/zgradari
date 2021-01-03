@@ -14,7 +14,7 @@ const Header = () => {
     <div>
                 {console.log('RENDER Header')}
 
-      <Navbar bg="light" expand="lg">
+      <Navbar sticky="top" bg="light" expand="lg" >
         <Link to="/">
           <Navbar.Brand>ZGRADARI</Navbar.Brand>
         </Link>

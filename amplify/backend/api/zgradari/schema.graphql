@@ -71,8 +71,8 @@ type Comment @model
   id: ID!
   tenantID: ID!
   buildingID: ID!
-  projectID: ID!
-  pollID: ID!
+  projectID: ID
+  pollID: ID
   content: String!
 }
 

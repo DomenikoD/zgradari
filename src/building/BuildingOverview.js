@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Table, ProgressBar } from "react-bootstrap";
-
+import InfoAlert from "../console/common/InfoAlert";
 const BuildingOverview = (props) => {
   return (
     <div>
-      {console.log('RENDER BuildingOverview')}
+      {console.log("RENDER BuildingOverview")}
+      <InfoAlert
+        info={{
+          alertHeading: "Info - pregled zgrade",
+          alertContent:
+            'Unutar konzole je vidljiva stranica "Pregled zgrade" na kojoj su prikazane osnovne informacije',
+        }}
+      />
+
       <h1>Pregled zgrade {props.building.buildingName}</h1>
       <p>Adresa: {props.building.buildingAddress}</p>
       <p>Predstavnik: {props.building.manager.name}</p>
@@ -12,36 +20,35 @@ const BuildingOverview = (props) => {
       <div className="status tablica">
         <h5>Status</h5>
         <Table striped bordered hover>
-        <thead>
-          <tr>
-            <th> </th>
-            <th>Ukupno</th>
-            <th>Preostalo</th>
-            <th>icon</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Stanara</td>
-            <td>49</td>
-            <td>50</td>
-            <td>NEW</td>
-          </tr>
-          <tr>
-          <td>Komentari</td>
-            <td>52</td>
-            <td>50</td>
-            <td>NEW</td>
-          </tr>
-          <tr>
-          <td>Dokumenti</td>
-            <td>2</td>
-            <td>50</td>
-            <td>NEW</td>
-          </tr>
-  
-        </tbody>
-      </Table>
+          <thead>
+            <tr>
+              <th> </th>
+              <th>Ukupno</th>
+              <th>Preostalo</th>
+              <th>icon</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Stanara</td>
+              <td>49</td>
+              <td>50</td>
+              <td>NEW</td>
+            </tr>
+            <tr>
+              <td>Komentari</td>
+              <td>52</td>
+              <td>50</td>
+              <td>NEW</td>
+            </tr>
+            <tr>
+              <td>Dokumenti</td>
+              <td>2</td>
+              <td>50</td>
+              <td>NEW</td>
+            </tr>
+          </tbody>
+        </Table>
       </div>
       <div className="news tablica">
         <h5>Novosti</h5>
@@ -75,28 +82,34 @@ const BuildingOverview = (props) => {
           <tr>
             <td>3</td>
             <td>Anketa</td>
-            <td>Anketa odabira izvođača završena<ProgressBar  now={100} /></td>
+            <td>
+              Anketa odabira izvođača završena
+              <ProgressBar now={100} />
+            </td>
             <td>2020-10-10 10:10</td>
             <td>GOTO</td>
           </tr>
           <tr>
             <td>4</td>
             <td>Anketa</td>
-            <td>U tijeku <ProgressBar animated now={65} /></td>
+            <td>
+              U tijeku <ProgressBar animated now={65} />
+            </td>
             <td>2020-10-10 10:10</td>
             <td>GOTO</td>
           </tr>
-          
+
           <tr>
             <td>5</td>
             <td>Projekt</td>
-            <td>Uređenje stubišta <ProgressBar animated now={25} /></td>
+            <td>
+              Uređenje stubišta <ProgressBar animated now={25} />
+            </td>
             <td>2020-10-10 10:10</td>
             <td>NEW</td>
           </tr>
         </tbody>
       </Table>
-      
     </div>
   );
 };
