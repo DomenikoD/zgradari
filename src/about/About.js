@@ -12,13 +12,13 @@ const About = () => {
         <h1>O nama</h1>
         <p>
           Trenutno "one man startup" - kojem je cilj izraditi aplikaciju za
-          podizanje svjesnosit i brige za svoje suvlasništvo.
+          podizanje svjesti i brige za svoje suvlasništvo.
         </p>
         <p>
-          Aplikacija je pohranjena na Amazonovim Web servisima (AWS), te je od
-          strane "AWS Activate - Founders" inicijative odobren
-          dvogodišnji budžet od ukupno 1350$. U nastavku razvoja biti će izrađena i
-          mobilna aplikacija.
+          Aplikacija je pohranjena na Amazonovim Web Servisima (AWS), te je od
+          strane "AWS Activate - Founders" inicijative odobren dvogodišnji
+          budžet od ukupno 1350$. U nastavku razvoja biti će izrađena i mobilna
+          aplikacija.
         </p>
         <p>
           Ideje otovreno prihvaćamo za diskusiju i implementaciju, a specijalna
@@ -42,6 +42,14 @@ const About = () => {
           <Button href="https://github.com/DomenikoD/zgradari" variant="link">
             Izvorni kod GitHub
           </Button>
+        </p>
+        <h1>Vizija</h1>
+        <p>
+          todo. Broj korisnika, prednosti, šire prednosti, druga tržišta i sl.
+        </p>
+        <h1>Misija</h1>
+        <p>
+          todo. Kontinuiranim radom i uvođenjem novih funkcionalnosti.
         </p>
       </Jumbotron>
       <Footer />

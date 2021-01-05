@@ -34,6 +34,7 @@ const Header = () => {
 
             <Nav.Link href="/upravitelj">Upravitelj - sučelje</Nav.Link>
             <Nav.Link href="/vlasnik">Vlasnik - sučelje</Nav.Link>
+            <Nav.Link href="/iskustva-zgradara">Iskustva</Nav.Link>
 
           </Nav>
           <Form inline>

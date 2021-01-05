@@ -9,6 +9,7 @@ import ManagerAdd from "./manager/ManagerAdd";
 import TenantMain from "./tenant/TenantMain";
 import ManagerMain from "./manager/ManagerMain";
 import AdminOverview from './admin/AdminOverview';
+import BlogOverview from './blog/BlogOverview';
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 
 import awsExports from "./aws-exports";
@@ -28,6 +29,7 @@ const App = () => {
         <Route path="/upravitelj" component={ManagerMain} />
         <Route path="/vlasnik" component={TenantMain} />
         <Route path="/admin" component={AdminOverview} />
+        <Route path="/iskustva-zgradara" component={BlogOverview} />
       </Switch>
     </Router>
 
