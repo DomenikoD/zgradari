@@ -9,7 +9,6 @@ import LandingCarousel from "./LandingCarousel";
 const Home = () => {
   return (
     <div>
-      <Header />
       <Landing />
       <LandingCarousel />
       <Footer />

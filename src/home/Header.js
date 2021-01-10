@@ -12,9 +12,9 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <div>
-                {console.log('RENDER Header')}
+      {console.log("RENDER Header")}
 
-      <Navbar sticky="top" bg="light" expand="lg" >
+      <Navbar sticky="top" bg="light" expand="lg">
         <Link to="/">
           <Navbar.Brand>ZGRADARI</Navbar.Brand>
         </Link>
@@ -23,19 +23,22 @@ const Header = () => {
           <Nav className="mr-auto">
             <Nav.Link href="/onama">O nama</Nav.Link>
             <Nav.Link href="/prijava">Prijava</Nav.Link>
-            <Nav.Link href="/registracija">Registracija</Nav.Link>
-            <NavDropdown title="Kako krenuti" id="basic-nav-dropdown">
+            <NavDropdown title="Počni odavde" id="basic-nav-dropdown">
+              <NavDropdown.Item href="/registracija">
+                Registriraj se!
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
+
               <NavDropdown.Item href="/pozovipredstavnika">
                 Pozovi predstavnika zgrade
-              </NavDropdown.Item>              
+              </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="/prijava">Javi se nama</NavDropdown.Item>
-            </NavDropdown>              
+            </NavDropdown>
 
             <Nav.Link href="/upravitelj">Upravitelj - sučelje</Nav.Link>
             <Nav.Link href="/vlasnik">Vlasnik - sučelje</Nav.Link>
             <Nav.Link href="/iskustva-zgradara">Iskustva</Nav.Link>
-
           </Nav>
           <Form inline>
             <FormControl type="text" placeholder="Adresa" className="mr-sm-2" />

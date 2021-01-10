@@ -10,6 +10,8 @@ import TenantMain from "./tenant/TenantMain";
 import ManagerMain from "./manager/ManagerMain";
 import AdminOverview from './admin/AdminOverview';
 import BlogOverview from './blog/BlogOverview';
+import SignIn from './auth/SignIn'
+import SignUp from './auth/Signup'
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 
 import awsExports from "./aws-exports";
@@ -22,8 +24,8 @@ const App = () => {
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/pocetna" component={TODO} />
-        <Route path="/prijava" component={TODO} />
-        <Route path="/registracija" component={TODO} />
+        <Route path="/prijava" component={SignIn} />
+        <Route path="/registracija" component={SignUp} />
         <Route path="/onama" component={About} />
         <Route path="/pozovipredstavnika" component={ManagerAdd} />
         <Route path="/upravitelj" component={ManagerMain} />
