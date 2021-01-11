@@ -11,7 +11,7 @@ import ManagerMain from "./manager/ManagerMain";
 import AdminOverview from './admin/AdminOverview';
 import BlogOverview from './blog/BlogOverview';
 import SignIn from './auth/SignIn'
-import SignUp from './auth/Signup'
+import SignUp from './auth/SignUp'
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 
 import awsExports from "./aws-exports";

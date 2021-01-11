@@ -59,6 +59,7 @@ const SignUp = () => {
     await Auth.signUp({ username, password, attrubutes: { email } });
     updateFormState({ ...formState, formType: "confirmSignUp" });
   }
+  
   async function confirmSignUp() {
     const { username, authCode } = formState;
     await Auth.confirmSignUp({ username, authCode });
@@ -75,7 +76,6 @@ const SignUp = () => {
     <div>
       <Header />
       <p>Sign UP - prvi puta</p>
-
       {formType === "signUp" && (
         <div>
           <input
@@ -125,7 +125,6 @@ const SignUp = () => {
           <Button onClick={() => Auth.signOut()}>ODJAVA</Button>
         </div>
       )}
-
       <Footer />
     </div>
   );
