@@ -3,19 +3,19 @@ import React from 'react'
 const Footer = () => {
 
   return(
-<div class="container">
+<div className="container">
 
-  <div class="row align-items-center">
+  <div className="row align-items-center">
   <p></p>
   <p></p>    <p></p>
 
-    <div class="col">
+    <div className="col">
       Želje, ideje i prijave na: domeniko.divjak@gmail.com
     </div>
-    <div class="col">
+    <div className="col">
       Izrada u tijeku
     </div>
-    <div class="col">
+    <div className="col">
       Zauvijek besplatno! Otvorene prijave.
     </div>
   </div>

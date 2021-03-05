@@ -24,7 +24,7 @@ const App = () => {
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/pocetna" component={TODO} />
-        <Route path="/prijava" component={SignIn} />
+        <Route path="/prijava" component={SignUp} />
         <Route path="/registracija" component={SignUp} />
         <Route path="/onama" component={About} />
         <Route path="/pozovipredstavnika" component={ManagerAdd} />

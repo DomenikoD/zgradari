@@ -1,8 +1,8 @@
 {
-    "identityPoolName": "zgradari925eeb4e_identitypool_925eeb4e",
+    "identityPoolName": "zgradarica533ebe_identitypool_ca533ebe",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "zgrada925eeb4e",
-    "userPoolName": "zgradari925eeb4e_userpool_925eeb4e",
+    "resourceNameTruncated": "zgradaca533ebe",
+    "userPoolName": "zgradarica533ebe_userpool_ca533ebe",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -28,10 +28,10 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "zgrada925eeb4e_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "zgradaca533ebe_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "925eeb4e",
-    "resourceName": "zgradari925eeb4e",
+    "sharedId": "ca533ebe",
+    "resourceName": "zgradarica533ebe",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
@@ -46,9 +46,6 @@
         ]
     },
     "useDefault": "default",
-    "usernameAttributes": [
-        "email"
-    ],
     "userPoolGroupList": [],
     "serviceName": "Cognito",
     "dependsOn": []

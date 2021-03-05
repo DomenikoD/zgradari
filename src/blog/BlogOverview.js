@@ -37,13 +37,27 @@ const posts = [
     title: "Adaptacija stana - struja",
     content:
       'Nakon još jednog potresa u nizu na zagrebačkom i širem području, svaka "Hiltica" je nerado viđeni alat u zgradi. Vaš posao mora ići dalje, Vaša banka ne čeka s ratama, vaši komunalni i vodni doprinosi i dalje se naplaćuju, plin, grijanje, odvoz otpada i struja također. Zove vas predstavnik stanara - koliko još mislite raditi, ne bi li možda malo stali dok se ne smiri jer su ljudi iscrpljeni. Odgovor je jasan, ali neka svatko za sebe odgovori. Ono što mu možete odgovoriti je da pokrene anketu unutar Zgradara i alocira budžet iz pričuve, pa neka Iscrpljeni pokreče fasadu od grafita, pokupe lišće i pometu dvorište. Neka glasuju za budžet zgrade, diskutiraju troškove, sve to unutar Zgradara. Dotle vaš provjereni električar postavlja nove kablove, a u Zgradarima dan prije najavljuje bučnije radove. Na kraju, vi ocjenjujete njegov rad, te je ocjena i komentar vidljiv u odjeljku Majstori.',
-    dateCreated: "siječanj 2020",
+    dateCreated: "siječanj 2021",
     creator: "DDIV",
   },
   {
     title: "Socijalno osjetljiva energetska obnova",
     content:
       'Socijalno-pravno-fizikalni interes. Biti socijalno osjetljiv i povećati kvalitetu zajedničkog življenja je temelj ove platforme. Evo nekoliko osjetljivih pitanja. Smije li predstavnik stanara braniti nešto što je on sebi napravio ili okoristio. Kako etažirati zgradu i znati koliko je točno tvoje. Kako s malom pričuvom napraviti velike stvari. Uložiti li ili ne veliku svotu novaca u energetsku efikasnost, pa je "dobivati" nazad u komadićima. Pričuva je 0.54% godišnje od vrijednosti nekretnine - vrijednost je rasla ali pričuva nije. Parkiranje i opstruiranje zajedničkog ne etažiranog vlasništva. Veliki stanar ima jacuzzi i psa, a mali tuš kadu - zajedničko brojilo vode po broju prijavljenih članova. Crveni križ donosi hranu u milijunski stan. Rušen nosivi zid, statika i osiguranje od potresa',
+    dateCreated: "siječanj 2021",
+    creator: "DDIV",
+  },
+  {
+    title: "Pisana obavijest na oglasnoj ploči",
+    content:
+      'I tako jedan pošteni i osvješteni radnik s hilticom u ruci i prašnom štraus jaknom, okači papir s obavijest o nadolazećim radovima. Iza njega dolazi hrabri hahar koji pošara dio i ubaci par uvredljivih komentara u svom stilu. Moglo je biti i ovako - vidi da u zajedničkom ulazu stoji digitalni ekran koji služi za slanje obavijesti svim suvlasnicima. U par dodira ispunjava jednostavnu formu i svi znaju kada hiltica udara i do kada.',
+    dateCreated: "siječanj 2021",
+    creator: "DDIV",
+  },
+  {
+    title: "Zgradari - Alexa skill",
+    content:
+      'Jednom i to. \"Alexa, ima li novosti u zgradi\"',
     dateCreated: "siječanj 2021",
     creator: "DDIV",
   },

@@ -1,7 +1,38 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Button, Jumbotron } from "react-bootstrap";
-
+import { Auth, Hub } from "aws-amplify";
 const Landing = () => {
+
+
+  const [isSignedIn, updateSignedIn] = useState("");
+
+  useEffect(() => {    
+    checkUser();
+    setAuthListener();
+  }, []);
+
+  async function setAuthListener() {
+    Hub.listen("auth", (data) => {
+      switch (data.payload.event) {
+        case "signIn":
+          console.log("user signed in");
+          break;
+        case "signOut":
+          console.log("user signed out");
+          break;
+        default:
+          break;
+      }
+    });
+  }
+  async function checkUser() {
+    try {
+      const user = await Auth.currentAuthenticatedUser();
+      console.log("user: ", user);
+    } catch (err) {}
+  }
+
+
   return (
     <div>
       <Jumbotron>

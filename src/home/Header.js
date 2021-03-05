@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   Button,
   Navbar,
@@ -8,8 +8,39 @@ import {
   FormControl,
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { Auth, Hub } from "aws-amplify";
 
 const Header = () => {
+
+  const [isSignedIn, updateSignedIn] = useState("");
+
+  useEffect(() => {    
+    checkUser();
+    setAuthListener();
+  }, []);
+
+  async function setAuthListener() {
+    Hub.listen("auth", (data) => {
+      switch (data.payload.event) {
+        case "signIn":
+          console.log("user signed in");
+          break;
+        case "signOut":
+          console.log("user signed out");
+          break;
+        default:
+          break;
+      }
+    });
+  }
+  async function checkUser() {
+    try {
+      const user = await Auth.currentAuthenticatedUser();
+      console.log("user: ", user);
+    } catch (err) {}
+  }
+
+
   return (
     <div>
       {console.log("RENDER Header")}
@@ -39,6 +70,11 @@ const Header = () => {
             <Nav.Link href="/upravitelj">Upravitelj - sučelje</Nav.Link>
             <Nav.Link href="/vlasnik">Vlasnik - sučelje</Nav.Link>
             <Nav.Link href="/iskustva-zgradara">Iskustva</Nav.Link>
+            {isSignedIn === "true" && (
+              <div>
+                <Nav.Link href="">SIGNED IN</Nav.Link>
+              </div>
+            )}
           </Nav>
           <Form inline>
             <FormControl type="text" placeholder="Adresa" className="mr-sm-2" />

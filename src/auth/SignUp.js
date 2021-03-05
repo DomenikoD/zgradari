@@ -22,7 +22,6 @@ const SignUp = () => {
   }, []);
 
   async function setAuthListener() {
-    
     Hub.listen("auth", (data) => {
       switch (data.payload.event) {
         case "signIn":
@@ -50,38 +49,50 @@ const SignUp = () => {
   function onChange(e) {
     e.persist();
     updateFormState(() => ({ ...formState, [e.target.name]: e.target.value }));
+    console.log("formState: ", formState);
   }
 
   const { formType } = formState;
 
   async function signUp() {
     const { username, email, password } = formState;
-    await Auth.signUp({ username, password, attrubutes: { email } });
-    updateFormState({ ...formState, formType: "confirmSignUp" });
+    try {
+      await Auth.signUp({
+        username,
+        password,
+        attributes: { email },
+      });
+      updateFormState({ ...formState, formType: "confirmSignUp" });
+    } catch (error) {
+      console.log("ERRRRRORORORO: ", error);
+      console.log("PORUKA: ", error.message);
+      console.log("formState: ", formState);
+    }
   }
-  
+
   async function confirmSignUp() {
     const { username, authCode } = formState;
-    await Auth.confirmSignUp({ username, authCode });
+    await Auth.confirmSignUp(username, authCode);
     updateFormState({ ...formState, formType: "signIn" });
+    console.log("formState: ", formState);
   }
 
   async function signIn() {
     const { username, password } = formState;
-    await Auth.signIn({ username, password });
+    await Auth.signIn(username, password);
     updateFormState({ ...formState, formType: "signedIn" });
   }
 
   return (
     <div>
       <Header />
-      <p>Sign UP - prvi puta</p>
+      <p>Registracija - prvi puta</p>
       {formType === "signUp" && (
         <div>
           <input
             name="username"
             onChange={onChange}
-            placeholder="Korisničko ime"
+            placeholder="Korisnicko ime"
           />
           <input
             name="password"
@@ -89,8 +100,18 @@ const SignUp = () => {
             onChange={onChange}
             placeholder="Lozinka"
           />
-          <input name="email" onChange={onChange} placeholder="email" />
-          <Button onClick={signUp}>Sing Up</Button>
+          <input name="email" onChange={onChange} placeholder="E-Mail" />
+          <Button onClick={signUp}>Registriraj se</Button>
+          <Button
+            onClick={() =>
+              updateFormState(() => ({
+                ...formState,
+                formType: "signIn",
+              }))
+            }
+          >
+            Prijava
+          </Button>
         </div>
       )}
       {formType === "confirmSignUp" && (
@@ -103,26 +124,23 @@ const SignUp = () => {
           <Button onClick={confirmSignUp}>Potvrdi registraciju</Button>
         </div>
       )}
+      {/*email, password, address, name, family_name*/}
       {formType === "signIn" && (
         <div>
-          <input
-            name="username"
-            onChange={onChange}
-            placeholder="Korisničko ime"
-          />
+          <input name="username" onChange={onChange} placeholder="Korisničko ime" />
           <input
             name="password"
             type="password"
             onChange={onChange}
             placeholder="Lozinka"
           />
-          <Button onClick={signIn}>Sing instance</Button>
+          <Button onClick={signIn}>Prijava</Button>
         </div>
       )}
       {formType === "signedIn" && (
         <div>
-          <h1>Dobar dan korisniče</h1>
-          <Button onClick={() => Auth.signOut()}>ODJAVA</Button>
+          <h1>Dobar dan korisniče </h1>
+          <Button onClick={() => Auth.signOut()}>Odjava</Button>
         </div>
       )}
       <Footer />
