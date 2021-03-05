@@ -3,10 +3,18 @@ import { Button, Jumbotron } from "react-bootstrap";
 import { Auth, Hub } from "aws-amplify";
 const Landing = () => {
 
+  const initialFormState = {
+    username: "",
+    password: "",
+    email: "",
+    authCode: "",
+    formType: "signUp",
+  };
 
-  const [isSignedIn, updateSignedIn] = useState("");
+  const [user, updateUser] = useState(null);
+  const [username, updateUserName] = useState("");
 
-  useEffect(() => {    
+  useEffect(() => {
     checkUser();
     setAuthListener();
   }, []);
@@ -15,7 +23,7 @@ const Landing = () => {
     Hub.listen("auth", (data) => {
       switch (data.payload.event) {
         case "signIn":
-          console.log("user signed in");
+          console.log("userr signed in: ", user);
           break;
         case "signOut":
           console.log("user signed out");
@@ -28,24 +36,27 @@ const Landing = () => {
   async function checkUser() {
     try {
       const user = await Auth.currentAuthenticatedUser();
-      console.log("user: ", user);
+      const {username} =user;
+      updateUserName(username)
+      console.log("user IN: ", user);
+      console.log("username IN: ", username);
+      updateUser(user);
     } catch (err) {}
   }
-
 
   return (
     <div>
       <Jumbotron>
-        <h1>Dobro došli na Zgradare!</h1>
+        <h1>Dobro došli {username} na Zgradare!</h1>
         <p>
-          Web-aplikacijom se povećava interakcija svih suvlasnika zgrade, osvjestite brigu za
-          zajedničko vlasništvo. Potaknite obnave, uređenja, predložite ideje,
-          vodite ankete, glasovanja i projekte.
+          Web-aplikacijom se povećava interakcija svih suvlasnika zgrade,
+          osvjestite brigu za zajedničko vlasništvo. Potaknite obnave, uređenja,
+          predložite ideje, vodite ankete, glasovanja i projekte.
         </p>{" "}
+        <p>Korisnici aplikacije su predstavnik stanara i stanari suvlasnici.</p>
         <p>
-          Korisnici aplikacije su predstavnik stanara i stanari suvlasnici. 
+          Isprobajte korisnička sučelja i uvjerite se u besplatne mogućnosti.
         </p>
-        <p>Isprobajte korisnička sučelja i uvjerite se u besplatne mogućnosti.</p>
         <p>
           <Button href="upravitelj" variant="link">
             Sučelje predstavnika stanara

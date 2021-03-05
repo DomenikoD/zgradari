@@ -15,6 +15,7 @@ const initialFormState = {
 const SignUp = () => {
   const [formState, updateFormState] = useState(initialFormState);
   const [user, updateUser] = useState(null);
+  const [username, updateUserName] = useState("");
 
   useEffect(() => {
     checkUser();
@@ -42,6 +43,8 @@ const SignUp = () => {
       const user = await Auth.currentAuthenticatedUser();
       console.log("user: ", user);
       updateUser(user);
+      const {username} =user;
+      updateUserName(username)
       updateFormState({ ...formState, formType: "signedIn" });
     } catch (err) {}
   }
@@ -139,7 +142,7 @@ const SignUp = () => {
       )}
       {formType === "signedIn" && (
         <div>
-          <h1>Dobar dan korisniče </h1>
+          <h1>Dobar dan {username} </h1>
           <Button onClick={() => Auth.signOut()}>Odjava</Button>
         </div>
       )}
