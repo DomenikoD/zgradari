@@ -72,6 +72,9 @@ const Landing = () => {
           <Button href="https://github.com/DomenikoD/zgradari" variant="link">
             Izvorni kod
           </Button>
+          <Button href="https://gitpod.io/#https://github.com/DomenikoD/zgradari" variant="link">
+            Sudjeluj u razvoju - GITPOD
+          </Button>
         </p>
       </Jumbotron>
     </div>
